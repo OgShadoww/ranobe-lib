@@ -7,7 +7,7 @@ const MainRandomList = () => {
     const {data: ranobeItem, isLoading} = ranobeApi.useFetchAllRanobeQuery({limit: 6, order:'random'})
 
     return (
-        <div className='flex gap-[15px] overflow-scroll flex-1 w-[100%] h-full'>
+        <div className='flex lg:gap-[15px] gap-[10px] overflow-scroll flex-1 w-[100%] h-full'>
             {ranobeItem && ranobeItem.map(item => 
                 <MainRandomItem key={item.id} randomRanobe={item}/>    
             )}
