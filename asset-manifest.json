@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ranobe-lib/static/css/main.30ffa252.css",
+    "main.js": "/ranobe-lib/static/js/main.7fc179dd.js",
+    "index.html": "/ranobe-lib/index.html",
+    "main.30ffa252.css.map": "/ranobe-lib/static/css/main.30ffa252.css.map",
+    "main.7fc179dd.js.map": "/ranobe-lib/static/js/main.7fc179dd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30ffa252.css",
+    "static/js/main.7fc179dd.js"
+  ]
+}
