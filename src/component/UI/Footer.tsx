@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <div className='flex flex-col items-center gap-[10px] whitespace-nowrap lg:flex-row-reverse md:flex-row-reverse sm:flex-col lg:gap-[50px] md:gap-[50px]'>
                 <div className='flex gap-[5px] text-[15px]'>
-                    © 2023 <FooterLink to='/main' text='RanobeLib'/>
+                    © 2023 <FooterLink to='/ranobe-lib' text='RanobeLib'/>
                 </div>
                 <div className='flex gap-[10px] text-[15px] items-center justify-center flex-wrap'>
                     <FooterLink to='/feedback' text="Зворотній зв'язок"/>
