@@ -6,7 +6,7 @@ const Routers = () => {
     return (
         <Routes>
             {routers.map(route => <Route key={route.path} path={route.path} element={<route.element/>}/> )}
-            <Route path="/*" element={<Navigate to="/ranobe-lib/main" replace/>}/>
+            <Route path="/*" element={<Navigate to="ranobe-lib/main" replace/>}/>
         </Routes>
     );
 };
