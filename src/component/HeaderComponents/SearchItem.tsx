@@ -17,7 +17,7 @@ const SearchItem:FC<props> = ({item}) => {
     }
 
     return (
-        <Link to={`ranobe-lib/${item.id}`} className='list-item ranobe-list-item gap-[12px]'>
+        <Link to={`/${item.id}`} className='list-item ranobe-list-item gap-[12px]'>
             <img className='max-w-[50px] min-w-[50px] w-[50px] min-h-[70px] max-h-[70px] h-[70px]' src={`https://moe.shikimori.one${item.image.original}`} alt={item.name} />
             <div className='ranobe-list-item-body gap-[5px] text-left'>
                 <div className='ranobe-list-item-name w-[100%]'>
