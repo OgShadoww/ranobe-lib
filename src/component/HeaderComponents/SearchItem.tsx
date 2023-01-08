@@ -17,7 +17,7 @@ const SearchItem:FC<props> = ({item}) => {
 
     return (
         <div className='list-item ranobe-list-item'>
-            <img className='w-[50px]' src={`https://moe.shikimori.one${item.image.original}`} alt={item.name} />
+            <img className='w-[50px] h-[70px]' src={`https://moe.shikimori.one${item.image.original}`} alt={item.name} />
             <div className='ranobe-list-item-body gap-[5px] text-left'>
                 <div className='ranobe-list-item-name '>
                     {item.russian}

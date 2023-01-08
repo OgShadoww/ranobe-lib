@@ -146,6 +146,7 @@ a:hover {
 img {
   overflow-clip-margin: content-box;
   overflow: clip;
+  max-width: auto;
 }
 
 .App {
