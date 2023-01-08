@@ -19,7 +19,7 @@ const SearchItem:FC<props> = ({item}) => {
         <div className='list-item ranobe-list-item gap-[12px]'>
             <img className='w-[50px] h-[70px]' src={`https://moe.shikimori.one${item.image.original}`} alt={item.name} />
             <div className='ranobe-list-item-body gap-[5px] text-left'>
-                <div className='ranobe-list-item-name w-[80%]'>
+                <div className='ranobe-list-item-name w-[100%]'>
                     {item.russian}
                     <span>
                         {item.name}
