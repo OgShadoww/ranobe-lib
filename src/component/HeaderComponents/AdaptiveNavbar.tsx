@@ -27,7 +27,7 @@ const AdaptiveNavbar = () => {
                 <div className='flex items-center justify-around mb-[20px]'>
                     <AccountItems icon={<BsBellSlash/>}/>
                     <div className='cursor-pointer ml-[3px]'>
-                        <img className='w-[60px] rounded-[4px]' src="https://ranobelib.me/uploads/users/3899409/cH6MOt7Uqy0e.jpg" alt="" />
+                        <img className='w-[70px] rounded-[4px]' src="https://ranobelib.me/uploads/users/3899409/cH6MOt7Uqy0e.jpg" alt="" />
                     </div>
                     <AccountItems icon={<BsBookmark/>}/>
                 </div>

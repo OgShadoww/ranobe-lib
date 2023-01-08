@@ -14,7 +14,7 @@ const AdaptiveNavbarItem:FC<props> = ({text, icon, iconMore, to, onClick}) => {
         return (
             <Link onClick={onClick} to={to} className='adaptive-navbar-item hover:text-[#fff]'>
                 {icon}
-                <span className='font-semibold text-[14px]'>{text}</span>
+                <span className='font-semibold text-[16px]'>{text}</span>
             </Link>
         )
     }
@@ -23,7 +23,7 @@ const AdaptiveNavbarItem:FC<props> = ({text, icon, iconMore, to, onClick}) => {
         <div onClick={onClick} className='adaptive-navbar-item cursor-pointer'>
             {iconMore}
             {icon}
-            <span className='font-semibold text-[14px]'>{text}</span>
+            <span className='font-semibold text-[16px]'>{text}</span>
         </div>
     );
 };
