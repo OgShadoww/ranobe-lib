@@ -16,10 +16,10 @@ const SearchItem:FC<props> = ({item}) => {
     }
 
     return (
-        <div className='list-item ranobe-list-item'>
+        <div className='list-item ranobe-list-item gap-[12px]'>
             <img className='w-[50px] h-[70px]' src={`https://moe.shikimori.one${item.image.original}`} alt={item.name} />
             <div className='ranobe-list-item-body gap-[5px] text-left'>
-                <div className='ranobe-list-item-name '>
+                <div className='ranobe-list-item-name w-[80%]'>
                     {item.russian}
                     <span>
                         {item.name}
