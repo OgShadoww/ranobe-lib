@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BsBellSlash, BsBookmark, BsChevronLeft } from 'react-icons/bs';
-import {CgMenu} from 'react-icons/cg'
-import { FaHome } from 'react-icons/fa';
+import {CgMenu, CgProfile} from 'react-icons/cg'
+import { FaHome, FaQuestionCircle } from 'react-icons/fa';
+import {MdOutlineMailOutline} from 'react-icons/md'
 import {TfiClose} from 'react-icons/tfi'
+import {TiNews} from 'react-icons/ti'
 import AccountItems from './AccountItems';
 import AdaptiveNavbarItem from './AdaptiveNavbarItem';
+import { AiFillWechat } from 'react-icons/ai';
 
 const AdaptiveNavbar = () => {
     const [open, setOpen] = useState(false)
@@ -33,7 +36,12 @@ const AdaptiveNavbar = () => {
                 </div>
                 <div className='flex flex-col'>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/ranobe-lib' icon={<FaHome/>} text='Головна'/>
-                    <AdaptiveNavbarItem iconMore={<BsChevronLeft className='absolute left-[5px] text-[#8f8e8e]'/>} icon={<GiHamburgerMenu/>} text='Каталог'/>
+                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/ranobe-lib' icon={<CgProfile/>} text='Профіль'/>
+                    <AdaptiveNavbarItem iconMore={<BsChevronLeft className='absolute left-[5px] text-[#8f8e8e]'/>} icon={<GiHamburgerMenu className='text-[14px]'/>} text='Каталог'/>
+                    <AdaptiveNavbarItem to='/ranobe-lib/forum' icon={<AiFillWechat/>} text='Форум'/>
+                    <AdaptiveNavbarItem to='/ranobe-lib/faq' icon={<FaQuestionCircle className='text-[13px]'/>} text='FAQ'/>
+                    <AdaptiveNavbarItem to='/ranobe-lib/news' icon={<TiNews />} text='Новини'/>
+                    <AdaptiveNavbarItem to='/ranobe-lib/contact' icon={<MdOutlineMailOutline />} text='Контакти'/>
                 </div>
             </div>
         </div>

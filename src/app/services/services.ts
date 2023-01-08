@@ -22,6 +22,20 @@ export const ranobeApi = createApi({
     })
 })
 
+export const ranobeMoreApi = createApi({
+    reducerPath:'ranobeMoreApi',
+    baseQuery: fetchBaseQuery({
+        baseUrl:'https://shikimori.one/api'
+    }),
+    endpoints: (build) => ({
+        fetchAllRanobe: build.query<IRanobe[], number | undefined>({
+            query: (num: number | undefined) => ({
+                url:`ranobe/${num}`,
+            })
+        })
+    })
+})
+
 export const ranobeApiSearch = createApi({
     reducerPath:'SearchAllRanobeApi',
     baseQuery: fetchBaseQuery({
