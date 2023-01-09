@@ -27,12 +27,12 @@ const AdaptiveNavbar = () => {
                 <div className='bg-[#141414] py-[10px] w-full flex justify-end items-center px-[20px] mb-[10px]'>
                     <TfiClose onClick={() => setOpen(false)} className='text-white text-[18px] cursor-pointer'/>
                 </div>
-                <div className='flex items-center justify-around mb-[20px]'>
-                    <AccountItems icon={<BsBellSlash/>}/>
+                <div className='flex justify-around border-b-[#38383a] px-[15px] py-[24px] border-b-[1px]'>
+                    <AccountItems icon={<BsBellSlash className='menu-icon'/>}/>
                     <div className='cursor-pointer ml-[3px]'>
                         <img className='w-[70px] rounded-[4px]' src="https://ranobelib.me/uploads/users/3899409/cH6MOt7Uqy0e.jpg" alt="" />
                     </div>
-                    <AccountItems icon={<BsBookmark/>}/>
+                    <AccountItems icon={<BsBookmark className='menu-icon'/>}/>
                 </div>
                 <div className='flex flex-col'>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/ranobe-lib' icon={<FaHome/>} text='Головна'/>
