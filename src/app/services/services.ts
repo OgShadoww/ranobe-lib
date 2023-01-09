@@ -10,12 +10,13 @@ export const ranobeApi = createApi({
         baseUrl:'https://shikimori.one/api'
     }),
     endpoints: (build) => ({
-        fetchAllRanobe: build.query<IRanobe[], {order: string, limit: number}>({
-            query: ({order, limit}) => ({
+        fetchAllRanobe: build.query<IRanobe[], {order: string, limit: number, censored: boolean}>({
+            query: ({order, limit, censored}) => ({
                 url:'ranobe',
                 params: {
                     limit,
                     order,
+                    censored
                 }
             })
         })

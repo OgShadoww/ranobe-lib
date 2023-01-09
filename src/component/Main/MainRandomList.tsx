@@ -4,7 +4,7 @@ import MainRandomItem from './MainRandomItem';
 import { IRanobe } from '../../types/RanobeType';
 
 const MainRandomList = () => {
-    const {data: ranobeItem, isLoading} = ranobeApi.useFetchAllRanobeQuery({limit: 6, order:'random'})
+    const {data: ranobeItem, isLoading} = ranobeApi.useFetchAllRanobeQuery({limit: 6, order:'random', censored: JSON.parse(localStorage.getItem('censored') || 'false') || false})
 
     return (
         <div className='flex lg:gap-[15px] gap-[10px] overflow-scroll flex-1 w-[100%] h-full'>

@@ -8,7 +8,7 @@ import {TfiClose} from 'react-icons/tfi'
 import {TiNews} from 'react-icons/ti'
 import AccountItems from './AccountItems';
 import AdaptiveNavbarItem from './AdaptiveNavbarItem';
-import { AiFillWechat } from 'react-icons/ai';
+import { AiFillSetting, AiFillWechat } from 'react-icons/ai';
 
 const AdaptiveNavbar = () => {
     const [open, setOpen] = useState(false)
@@ -35,13 +35,14 @@ const AdaptiveNavbar = () => {
                     <AccountItems icon={<BsBookmark className='menu-icon'/>}/>
                 </div>
                 <div className='flex flex-col'>
-                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/ranobe-lib' icon={<FaHome/>} text='Головна'/>
-                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/ranobe-lib' icon={<CgProfile/>} text='Профіль'/>
+                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/' icon={<FaHome/>} text='Головна'/>
+                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/profile' icon={<CgProfile/>} text='Профіль'/>
                     <AdaptiveNavbarItem iconMore={<BsChevronLeft className='absolute left-[5px] text-[#8f8e8e]'/>} icon={<GiHamburgerMenu className='text-[14px]'/>} text='Каталог'/>
-                    <AdaptiveNavbarItem to='/ranobe-lib/forum' icon={<AiFillWechat/>} text='Форум'/>
-                    <AdaptiveNavbarItem to='/ranobe-lib/faq' icon={<FaQuestionCircle className='text-[13px]'/>} text='FAQ'/>
-                    <AdaptiveNavbarItem to='/ranobe-lib/news' icon={<TiNews />} text='Новини'/>
-                    <AdaptiveNavbarItem to='/ranobe-lib/contact' icon={<MdOutlineMailOutline />} text='Контакти'/>
+                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/forum' icon={<AiFillWechat/>} text='Форум'/>
+                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/faq' icon={<FaQuestionCircle className='text-[13px]'/>} text='FAQ'/>
+                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/news' icon={<TiNews />} text='Новини'/>
+                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/contact' icon={<MdOutlineMailOutline />} text='Контакти'/>
+                    <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/settings' icon={<AiFillSetting />} text='Налаштування'/>
                 </div>
             </div>
         </div>
