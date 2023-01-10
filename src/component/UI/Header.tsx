@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { BsMoon, BsSearch } from 'react-icons/bs';
 import { useTheme } from '../../app/hook/useTheme';
 import Account from '../HeaderComponents/Account';
@@ -7,31 +7,30 @@ import AdaptiveNavbar from '../HeaderComponents/AdaptiveNavbar';
 import Logo from '../HeaderComponents/Logo';
 import Navbar from '../HeaderComponents/Navbar';
 import Search from '../HeaderComponents/Search';
+import DesctopHeader from './DesctopHeader';
+import MobilleHeader from './MobilleHeader';
 
 
 const Header:FC = () => {
     const [visible, setVisible] = useState<boolean>(false)
     const {theme, setTheme} = useTheme()
-
+    const [show, setShow] = useState(false)
+    
     const handleTheme = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light')
     }
 
+        
+    if(window.innerWidth > 1024) {
+        return <DesctopHeader/>
+    }
+    if(window.innerWidth <= 1024) {
+       return <MobilleHeader/>
+    }
+
     return (
         <>
-            <div className='header fixed top-0 z-40 w-full h-[70px] hidden md:hidden sm:hidden lg:flex justify-around items-center'>   
-                <Logo/>
-                <Navbar setVisible={setVisible}/>
-                <Account/>
-            </div>
-            <div className='header fixed top-0 z-40 w-full h-[70px] flex lg:hidden md:flex sm:flex justify-between items-center pl-[20px] pr-[5px]'>   
-                <AdaptiveNavbar/>
-                <div className='flex items-center justify-center'>
-                    <AccountItems icon={<BsMoon className='text-white'/>} onClick={() => handleTheme()}/>
-                    <AccountItems onClick={() => setVisible(true)} icon={<BsSearch className='text-white'/>}/>
-                </div>
-            </div>
-            <Search setVisible={setVisible} visible={visible}/>
+            
         </>
     );
 };
