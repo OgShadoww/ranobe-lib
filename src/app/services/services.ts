@@ -1,4 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/dist/query/react'
+import { IFullRanobe } from '../../types/IFullRanobe'
 import { IGenres } from '../../types/IGenres'
 import { ITopics } from '../../types/ITopics'
 import { IUser } from '../../types/IUser'
@@ -29,7 +30,7 @@ export const ranobeMoreApi = createApi({
         baseUrl:'https://shikimori.one/api'
     }),
     endpoints: (build) => ({
-        fetchAllRanobe: build.query<IRanobe[], number | undefined>({
+        fetchAllRanobe: build.query<IFullRanobe, number | undefined>({
             query: (num: number | undefined) => ({
                 url:`ranobe/${num}`,
             })

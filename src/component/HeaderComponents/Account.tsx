@@ -16,7 +16,7 @@ const Account = () => {
     const [visible, setVisible] = useState(false)
 
     return (
-        <div className='text-white flex justify-center items-center'>
+        <div className='text-white flex justify-center items-center relative'>
             {/* <div className='px-[13px] py-[10px] header-hover'>
                 <FaPencilAlt/>
             </div> */}

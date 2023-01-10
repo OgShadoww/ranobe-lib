@@ -10,7 +10,7 @@ const DropDownList:FC<props> = ({isVisible, children}) => {
 
     if(isVisible) {
         baseStyles.pop()
-        baseStyles.push('top-0 opacity-[1] pointer-event-auto visible')
+        baseStyles.push('top-0 right-0 opacity-[1] pointer-event-auto visible')
     }
 
     return (

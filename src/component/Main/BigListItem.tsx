@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
 import { IRanobe } from '../../types/RanobeType';
 
 interface props {
@@ -7,7 +8,7 @@ interface props {
 
 const BigListItem:FC<props> = ({items}) => {
     return (
-        <div className='flex gap-[10px] lg:gap-[20px] md:gap-[20px] sm:gap-[10px] border-b-[#38383a] pb-[10px] '>
+        <Link to={`/${items.id}`} className='flex gap-[10px] lg:gap-[20px] md:gap-[20px] sm:gap-[10px] border-b-[#38383a] pb-[10px] '>
             <img className='w-[72px] sm:w-[72px] md:w-[100px] lg:w-[100px]' src={`https://moe.shikimori.one${items.image.original}`} alt="" />
             <div className='flex w-full flex-col text-left'>
                 <div className='flex flex-col pb-[5px] border-b-[#2ea3e7] border-b-[1px] w-full'>
@@ -18,7 +19,7 @@ const BigListItem:FC<props> = ({items}) => {
                     <a className='cursor-pointer font-semibold uppercase sm:uppercase lg:normal-case md:normal-case text-[11px] lg:text-[14px] md:text-[14px] sm:text-[13px]'>{items.volumes} Томів {items.chapters} Глав</a>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
