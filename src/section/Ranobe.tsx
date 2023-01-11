@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ranobeMoreApi } from '../app/services/services';
+import { ranobeMoreApi, ranobeRoleApi } from '../app/services/services';
 import {FaPencilAlt, FaRss} from 'react-icons/fa'
 import { AiFillStar, AiFillWarning } from 'react-icons/ai'
 import {BsFillPlusSquareFill} from 'react-icons/bs'
 import {FaFolder} from 'react-icons/fa'
 import {SlArrowDown} from 'react-icons/sl'
 import { links } from '../variable/link';
+import AboutRanobe from '../component/Ranobe/AboutRanobe';
 
 const Ranobe = () => {
     const params = useParams()
     const [current, setCurrent] = useState(0)
     const {data: ranobe} = ranobeMoreApi.useFetchAllRanobeQuery(Number(params.id))
+    let {data: role} = ranobeRoleApi.useFetchAllRanobeQuery(Number(params.id))
+    let autor = role?.filter(role => role.roles[0] === 'Story')
+    let art = role?.filter(role => role.roles[0] === 'Art')
+
+    if(role) {
+        role = role.filter(role => role.person !== null)
+    }
 
     const tabLineStyles = ['tabs-line']
     if(current === 0) {
@@ -20,6 +28,7 @@ const Ranobe = () => {
     if(current === 1) {
         tabLineStyles.push('block translate-x-[102px] w-[85px]')
     }
+
     return (
         <>
             <div className='media-background'></div>
@@ -39,6 +48,24 @@ const Ranobe = () => {
                             <button className='button-primary px-[26px] w-full py-[5px] rounded-[5px] text-[14px]'>Почати читати</button>
                             <button className='bg-[#6f42c1] text-white px-[10px] w-full py-[5px] rounded-[5px] flex items-center justify-between text-[14px]'><FaFolder/> 傑作 <SlArrowDown/></button>
                         </div>
+                        <div className='foreground px-[8px] py-[9px]'>
+                            <AboutRanobe title='Тип' subtitle={ranobe?.kind === 'light_novel' ? 'Ранобе (LN)' : ''}/>
+                            <AboutRanobe title='Рік релізу' subtitle={ranobe?.aired_on.slice(0, 4)}/>
+                            <AboutRanobe 
+                                title='Статус' 
+                                subtitle={
+                                    ranobe?.status === 'ongoing' ? 'Онгонинг' : 
+                                    ranobe?.status === 'released' ? 'Закінчений' : 
+                                    ranobe?.status === 'anons' ? 'Анонс' : 
+                                    ranobe?.status === 'paused' ? 'Призупиняно' : 
+                                    ranobe?.status === 'discontinued' ? 'Зупиняно' : ''
+                                }
+                            />
+                            <AboutRanobe title='Автор' subtitle={autor?.map(autor => autor.person?.name.toString())}/>
+                            <AboutRanobe title='Художник' subtitle={art?.map(art => art.person?.name.toString())}/>
+                            <AboutRanobe title='Всього глав' subtitle={ranobe?.chapters}/>
+                            <AboutRanobe title='Оригінальна назва' subtitle={ranobe?.japanese}/>
+                        </div>
                     </div>
                     <div className='media-content-side'>
                         <div className='flex items-center mb-[8px]'>
@@ -55,9 +82,6 @@ const Ranobe = () => {
                                 <p className='text-white text-[22px] font-[600]'>{ranobe?.score}</p>
                                 <p className='text-white text-[16px] opacity-[0.7]'>
                                     {ranobe?.rates_scores_stats.reduce((rate: number, initial) => {
-                                        if(initial.value > 999) {
-                                            return initial.value / 1000 
-                                        }
                                         return (rate + initial.value)
                                     }, 0)}
                                 </p>

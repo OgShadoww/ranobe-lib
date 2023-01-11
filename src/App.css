@@ -174,6 +174,19 @@ img {
 .border-base {
   border-bottom: 1px solid var(--border-base);
 }
+.text-mutted {
+  color: var(--text-muted);
+}
+.light-hover:hover {
+  background: hsla(240,5%,48%,.05);
+  background: var(--background-fill-4);
+  text-decoration: none;
+  color: #212529;
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
 
 /* checkbox */
 
