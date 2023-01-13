@@ -41,7 +41,7 @@ const AdaptiveNavbar = () => {
                 <div className='flex flex-col'>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/' icon={<FaHome/>} text='Головна'/>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/profile' icon={<CgProfile/>} text='Профіль'/>
-                    <AdaptiveNavbarItem iconMore={<BsChevronLeft className='absolute left-[5px] text-[#8f8e8e]'/>} icon={<GiHamburgerMenu className='text-[14px]'/>} text='Каталог'/>
+                    <AdaptiveNavbarItem to='/catalog' iconMore={<BsChevronLeft className='absolute left-[5px] text-[#8f8e8e]'/>} icon={<GiHamburgerMenu className='text-[14px]'/>} text='Каталог'/>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/forum' icon={<AiFillWechat/>} text='Форум'/>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/faq' icon={<FaQuestionCircle className='text-[13px]'/>} text='FAQ'/>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/news' icon={<TiNews />} text='Новини'/>
