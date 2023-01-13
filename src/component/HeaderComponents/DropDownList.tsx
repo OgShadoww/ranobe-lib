@@ -6,11 +6,11 @@ interface props {
 }
 
 const DropDownList:FC<props> = ({isVisible, children}) => {
-    const baseStyles = ['tippy right-0', 'top-[70px] opacity-0 pointer-event-none invisible']
+    const baseStyles = ['tippy right-0', 'top-[60px] opacity-0 pointer-event-none invisible']
 
     if(isVisible) {
         baseStyles.pop()
-        baseStyles.push('top-[50px] right-0 opacity-[1] pointer-event-auto visible')
+        baseStyles.push('top-[40px] right-0 opacity-[1] pointer-event-auto visible')
     }
 
     return (

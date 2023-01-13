@@ -13,7 +13,7 @@ import Search from './Search';
     const Navbar:FC<props> = ({setVisible}) => {
     return (
         <nav className='flex justify-between items-end'>
-            <NavbarItem firstIcon={<AiOutlineAlignLeft className='text-white mr-[10px]'/>} text="Каталог"/>
+            <NavbarItem to='/catalog' firstIcon={<AiOutlineAlignLeft className='text-white mr-[10px]'/>} text="Каталог"/>
             <NavbarItem onClick={() => setVisible(true)} firstIcon={<BsSearch className='text-white mr-[10px]'/>} text="Пошук"/>
             <NavbarItem firstIcon={<AiFillWechat className='text-white mr-[10px]'/>} text="Форум"/>
             <div className='flex justify-start items-center mr-[20px] last:mr-0 cursor-pointer px-[13px] py-[10px] header-hover'>

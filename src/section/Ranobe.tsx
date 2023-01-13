@@ -28,10 +28,10 @@ const Ranobe = () => {
     if(current === 1) {
         tabLineStyles.push('block translate-x-[102px] w-[85px]')
     }
-
     return (
         <>
             <div className='media-background'></div>
+            <img className='w-[20px] h-[20px] z-[100]' src={`https://kawai.shikimori.one${ranobe?.image.original}`} alt="" />
             <div className='pt-[225px] relative z-20 conteiner px-[15px] w-[100%] max-w-[1200px]'>
                 <div className='pt-[15px] flex gap-[40px]'>
                     <div className='w-[240px] flex-shrink-0 flex gap-[17px] flex-col'>

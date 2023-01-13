@@ -3,7 +3,7 @@ import { ranobeApi } from '../../app/services/services';
 import BigListItem from './BigListItem';
 
 const BigListRanobe = () => {
-    const {data: ranobe} = ranobeApi.useFetchAllRanobeQuery({limit: 20, order:'popularity', censored: JSON.parse(localStorage.getItem('censored') || 'false') || false})
+    const {data: ranobe} = ranobeApi.useFetchAllRanobeQuery({limit: 20, order:'popularity', censored: JSON.parse(localStorage.getItem('censored') || 'true') || true})
 
     return (
         <div className='flex flex-col main-wrapper-padding-out'>

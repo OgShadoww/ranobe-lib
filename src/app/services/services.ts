@@ -38,6 +38,7 @@ export const ranobeMoreApi = createApi({
         })
     })
 })
+
 export const ranobeRoleApi = createApi({
     reducerPath:'ranobeRoleApi',
     baseQuery: fetchBaseQuery({
@@ -47,6 +48,24 @@ export const ranobeRoleApi = createApi({
         fetchAllRanobe: build.query<IRoles[], number | undefined>({
             query: (num: number | undefined, ) => ({
                 url:`ranobe/${num}/roles`,
+            })
+        })
+    })
+})
+
+export const ranobeFillterApi = createApi({
+    reducerPath:'ranobeFillterApi',
+    baseQuery: fetchBaseQuery({
+        baseUrl:'https://shikimori.one/api'
+    }),
+    endpoints: (build) => ({
+        fetchAllRanobe: build.query<IRanobe[], {order: string, limit: number}>({
+            query: ({order, limit}) => ({
+                url:'ranobe',
+                params: {
+                    limit,
+                    order,
+                }
             })
         })
     })

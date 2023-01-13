@@ -15,6 +15,10 @@ const DropRightList:FC<props> = ({isOpen, name, icon, point}) => {
     if(isOpen) {
         navbarMenuStyles.pop()
         navbarMenuStyles.push('left-0 right-0 top-0 z-30')
+        document.body.classList.add('overwflow-hidden')
+    }
+    else {
+        document.body.classList.remove('overwflow-hidden')
     }
 
     return (

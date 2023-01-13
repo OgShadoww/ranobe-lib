@@ -3,7 +3,7 @@ import { ranobeApi } from '../../app/services/services';
 import PopularRanobeitem from './PopularRanobeitem';
 
 const PopularRanobe = () => {
-    const {data: popularRanobe} = ranobeApi.useFetchAllRanobeQuery({order: 'popularity', limit:20,  censored: JSON.parse(localStorage.getItem('censored') || 'false') || false})
+    const {data: popularRanobe} = ranobeApi.useFetchAllRanobeQuery({order: 'popularity', limit:20,  censored: JSON.parse(localStorage.getItem('censored') || 'true') || true})
 
     return (
         <div className='flex flex-col'>

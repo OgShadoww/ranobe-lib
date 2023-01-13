@@ -17,9 +17,11 @@ const Search:FC<props> = ({visible, setVisible}) => {
     if(visible) {
         mainStyles.pop()
         mainStyles.push('search')
+        document.body.classList.add('overwflow-hidden')
     }
     else {
         mainStyles.push('opacity-0 pointer-events-none')
+        document.body.classList.remove('overwflow-hidden')
     }
         
     return (

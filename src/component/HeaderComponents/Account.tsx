@@ -20,9 +20,6 @@ const Account = () => {
 
     return (
         <div className='text-white flex justify-center items-center relative'>
-            {/* <div className='px-[13px] py-[10px] header-hover'>
-                <FaPencilAlt/>
-            </div> */}
             <AccountItems icon={<FaPencilAlt/>}/>
             <AccountItems icon={<BsBellSlash/>}/>
             <AccountItems icon={<BsBookmark/>}/>

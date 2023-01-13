@@ -6,7 +6,7 @@ const Footer = () => {
     const {setTheme} = useTheme()
     
     return (
-        <div className='w-full relative footer flex flex-col lg:items-start md:items-start sm:items-center items-center gap-[10px] justify-around'>
+        <div className='w-full relative footer flex flex-col lg:items-start md:items-start sm:items-center items-center gap-[10px] justify-around pb-[20px]'>
             <ul className="lightrope">
                 <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
             </ul>
