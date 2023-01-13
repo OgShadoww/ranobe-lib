@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/ranobe-lib/static/css/main.834152dc.css",
-    "main.js": "/ranobe-lib/static/js/main.f1d01645.js",
+    "main.css": "/ranobe-lib/static/css/main.5d1d39a1.css",
+    "main.js": "/ranobe-lib/static/js/main.e3e468b0.js",
     "static/media/sdENChI4MFN1.png": "/ranobe-lib/static/media/sdENChI4MFN1.750921b0f4b06a5b22ca.png",
+    "static/media/circle.png": "/ranobe-lib/static/media/circle.6fdc41d43aba9240af04.png",
     "index.html": "/ranobe-lib/index.html",
-    "main.834152dc.css.map": "/ranobe-lib/static/css/main.834152dc.css.map",
-    "main.f1d01645.js.map": "/ranobe-lib/static/js/main.f1d01645.js.map"
+    "main.5d1d39a1.css.map": "/ranobe-lib/static/css/main.5d1d39a1.css.map",
+    "main.e3e468b0.js.map": "/ranobe-lib/static/js/main.e3e468b0.js.map"
   },
   "entrypoints": [
-    "static/css/main.834152dc.css",
-    "static/js/main.f1d01645.js"
+    "static/css/main.5d1d39a1.css",
+    "static/js/main.e3e468b0.js"
   ]
 }
