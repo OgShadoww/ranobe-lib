@@ -76,7 +76,6 @@ html[data-theme='light'] {
   --range-thumb-border: rgba(0,0,0,.04);
   --range-thumb-shadow: rgba(0,0,0,.15);
 }
-
 html[data-theme='dark'] {
   --button-default-bg: #2d2d2d;
   --button-default-bg-hover: #2f2f2f;

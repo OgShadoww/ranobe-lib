@@ -10,7 +10,7 @@ function App() {
   const {theme, setTheme} = useTheme()
 
   return (
-    <div className="App flex flex-col justify-center items-center lg:pt-[80px] md:pt-[80px] sm:pt-[70px] pt-[70px]">
+    <div className="App flex flex-col justify-center items-center lg:pt-[80px] md:pt-[80px] sm:pt-[45px] pt-[45px]">
       <Header/>
       <Routers/>
       <Footer/>
