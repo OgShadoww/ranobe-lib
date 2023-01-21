@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import { IPointsCatalog } from '../../types/IPointsCatalog';
-import AdaptiveNavbarItem from './AdaptiveNavbarItem';
+import AdaptiveNavbarItem from './Mobile/AdaptiveNavbarItem';
 
 interface props {
     isOpen: boolean,
@@ -27,7 +27,7 @@ const DropRightList:FC<props> = ({isOpen, setIsOpen, name, icon, point}) => {
 
     return (
         <div className={navbarMenuStyles.join(' ')}>
-            <div className='text-center mb-[10px] px-[20px] py-[10px] text-[22px]'>
+            <div className='text-center items-center justify-center gap-[10px] flex mb-[10px] px-[20px] py-[10px] text-[22px]'>
                 {icon}
                 {name}
             </div>

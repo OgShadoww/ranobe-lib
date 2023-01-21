@@ -28,10 +28,10 @@ const Ranobe = () => {
     if(current === 1) {
         tabLineStyles.push('block translate-x-[102px] w-[85px]')
     }
+
     return (
         <>
             <div className='media-background'></div>
-            <img className='w-[20px] h-[20px] z-[100]' src={`https://kawai.shikimori.one${ranobe?.image.original}`} alt="" />
             <div className='pt-[225px] relative z-20 conteiner px-[15px] w-[100%] max-w-[1200px]'>
                 <div className='pt-[15px] flex gap-[40px]'>
                     <div className='w-[240px] flex-shrink-0 flex gap-[17px] flex-col'>
@@ -49,7 +49,7 @@ const Ranobe = () => {
                             <button className='bg-[#6f42c1] text-white px-[10px] w-full py-[5px] rounded-[5px] flex items-center justify-between text-[14px]'><FaFolder/> 傑作 <SlArrowDown/></button>
                         </div>
                         <div className='foreground px-[8px] py-[9px]'>
-                            <AboutRanobe title='Тип' subtitle={ranobe?.kind === 'light_novel' ? 'Ранобе (LN)' : ''}/>
+                            <AboutRanobe title='Тип' subtitle={ranobe?.kind === 'light_novel' ? 'Ранобе' : ranobe?.kind === 'novel' ? 'Новелла' : ''}/>
                             <AboutRanobe title='Рік релізу' subtitle={ranobe?.aired_on.slice(0, 4)}/>
                             <AboutRanobe 
                                 title='Статус' 
@@ -89,7 +89,7 @@ const Ranobe = () => {
                         </div>
                         <div className='foreground rounded-[4px]'>
                             <div className='px-[18px]'>
-                                <ul className='foreground overflow-y-hidden overflow-x-auto relative text-[14px] border-b-[#] text-left list-none flex border-base'>
+                                <ul className='foreground overflow-y-hidden overflow-x-auto relative text-[14px] border-b-[#] text-left list-none flex border-base mb-[10px]'>
                                     {links.map((link, index) => 
                                         <li onClick={() => setCurrent(index)} key={link.id} className={current === index ? 'py-[13px] mr-[20px] cursor-pointer' : 'text-[#818181] media-links mr-[20px] cursor-pointer py-[13px] transition-colors'}>
                                             {link.text}
@@ -99,6 +99,13 @@ const Ranobe = () => {
 
                                     </div>
                                 </ul>
+                                {current === 0 ?
+                                    <div className='flex flex-col'>
+                                        <p className='text-[14px] text-left leading-[1.6]'>
+                                            {ranobe?.description ? ranobe.description.replace(/[^А-яЁё ]/g,"") : 'Немає опису'}
+                                        </p>
+                                    </div>
+                                : ''}
                             </div>
                         </div>
                     </div>

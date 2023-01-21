@@ -4,7 +4,7 @@ import {BsSearch} from 'react-icons/bs'
 import {AiFillWechat} from 'react-icons/ai'
 import {FaQuestionCircle} from 'react-icons/fa'
 import NavbarItem from './NavbarItem';
-import Search from './Search';
+import Search from '../Search';
 
     interface props {
         setVisible: any

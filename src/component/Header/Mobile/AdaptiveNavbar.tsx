@@ -6,10 +6,10 @@ import { FaHome, FaQuestionCircle } from 'react-icons/fa';
 import {MdOutlineMailOutline} from 'react-icons/md'
 import {TfiClose} from 'react-icons/tfi'
 import {TiNews} from 'react-icons/ti'
-import AccountItems from './AccountItems';
+import AccountItems from '../AccountItems';
 import AdaptiveNavbarItem from './AdaptiveNavbarItem';
 import { AiFillSetting, AiFillWechat } from 'react-icons/ai';
-import DropRightList from './DropRightList';
+import DropRightList from '../DropRightList';
 
 const AdaptiveNavbar = () => {
     const [open, setOpen] = useState(false)
@@ -62,7 +62,7 @@ const AdaptiveNavbar = () => {
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/settings' icon={<AiFillSetting />} text='Налаштування'/>
                 </div>
             </div>
-            <DropRightList setIsOpen={setCatalogOpen} isOpen={catalogOpen} icon={'f'} point={point} name="каталог"/>
+            <DropRightList setIsOpen={setCatalogOpen} isOpen={catalogOpen} icon={<GiHamburgerMenu/>} point={point} name="Каталог"/>
         </div>
     );
 };

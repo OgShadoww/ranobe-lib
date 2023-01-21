@@ -1,12 +1,12 @@
 import React, { FC, useState } from 'react';
 import { AiFillCaretDown } from 'react-icons/ai';
-import BigListRanobe from '../component/Main/BigListRanobe';
-import MainGenresItem from '../component/Main/MainGenresItem';
-import MainGenresList from '../component/Main/MainGenresList';
-import MainRandomList from '../component/Main/MainRandomList';
-import MainRightWrapper from '../component/Main/MainRightWrapper';
-import MainForumBlock from '../component/Main/MainTopicsBlock';
-import PopularRanobeList from '../component/Main/PopularRanobeList';
+import BigListRanobe from '../../component/Main/BigListRanobe';
+import MainGenresItem from '../../component/Main/MainGenresItem';
+import MainGenresList from '../../component/Main/MainGenresList';
+import MainRandomList from '../../component/Main/MainRandomList';
+import MainRightWrapper from '../../component/Main/MainRightWrapper';
+import MainForumBlock from '../../component/Main/MainTopicsBlock';
+import PopularRanobeList from '../../component/Main/PopularRanobeList';
 
 const DecstopMain = () => {
     const [open, setOpen] = useState<boolean>(false)

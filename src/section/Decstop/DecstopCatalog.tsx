@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { BsChevronDown, BsChevronRight, BsSortDown } from 'react-icons/bs';
-import { useDebounce } from '../app/hook/useDebounse';
-import { ranobeFillterApi } from '../app/services/services';
-import CatalogItem from '../component/Catalog/CatalogItem';
-import DecstopCatalogRight from '../component/Catalog/DesctopCatalogRight';
-import MobileCatalogRight from '../component/Catalog/DesctopCatalogRight';
-import DropDownList from '../component/HeaderComponents/DropDownList'
-import DropDownListItem from '../component/HeaderComponents/DropDownListItem';
+import { useDebounce } from '../../app/hook/useDebounse';
+import { ranobeFillterApi } from '../../app/services/services';
+import CatalogItem from '../../component/Catalog/Decstop/DecstopCatalogItem';
+import DecstopCatalogRight from '../../component/Catalog/Decstop/DesctopCatalogRight';
+import DropDownList from '../../component/Header/DropDownList'
 
 const DecstopCatalog = () => {
-    const [order, setOrder] = useState<string>('rate')
-    const {data: ranobe} = ranobeFillterApi.useFetchAllRanobeQuery({order: order, limit: 30})
+    const [order, setOrder] = useState<string>('ranked')
+    const [genre, setGenre] = useState<number>()
     const [visible, setVisible] = useState<boolean>(false)
     const [value, setValue] = useState('рейтингу')
     const [searchTerm, setSearchTerm] = useState("");
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
+    const {data: ranobe} = ranobeFillterApi.useFetchAllRanobeQuery({order: order, limit: 30, genre: genre})
 
     useEffect(() => {
         setValue('рейтингу')
@@ -104,7 +103,7 @@ const DecstopCatalog = () => {
                         </div>
                     </div>
             </div>
-            <DecstopCatalogRight/>
+            <DecstopCatalogRight setGenre={setGenre}/>
         </div>
     );
 };

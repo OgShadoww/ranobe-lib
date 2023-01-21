@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
-import DecstopMain from './DesctopMain';
-import MobileMain from './MobileMain';
+import DecstopMain from './Decstop/DesctopMain';
+import MobileMain from './Mobile/MobileMain';
 
 const Main = () => {
     const [open, setOpen] = useState<boolean>(false)

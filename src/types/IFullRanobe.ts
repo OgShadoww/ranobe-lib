@@ -21,7 +21,7 @@ export interface IFullRanobe {
     synonyms: [string],
     license_name_ru: null | string,
     description: string,
-    description_html: string & HTMLElement,
+    description_html: React.ReactNode | string,
     description_source: string,
     franchise: string,
     favoured: boolean,

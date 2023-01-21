@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Account from '../HeaderComponents/Account';
-import Logo from '../HeaderComponents/Logo';
-import Navbar from '../HeaderComponents/Navbar';
-import Search from '../HeaderComponents/Search';
+import Account from '../../Header/Account';
+import Logo from '../../Header/Logo';
+import Navbar from '../../Header/Decstop/Navbar';
+import Search from '../../Header/Search';
 
 const DesctopHeader = () => {
     const [visible, setVisible] = useState<boolean>(false)

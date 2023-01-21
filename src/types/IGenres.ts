@@ -2,5 +2,5 @@ export interface IGenres {
     id: number,
     name: string,
     russian: string,
-    kink: string
+    kind: string
 }

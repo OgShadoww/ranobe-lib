@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { TfiClose } from 'react-icons/tfi';
-import { useDebounce } from '../app/hook/useDebounse';
-import { ranobeFillterApi } from '../app/services/services';
-import CatalogItem from '../component/Catalog/CatalogItem';
-import MobileSortMenu from '../component/Catalog/MobileSortMenu';
-import MobileTopModal from '../component/Catalog/MobileTopModal';
+import { useDebounce } from '../../app/hook/useDebounse';
+import { ranobeFillterApi } from '../../app/services/services';
+import CatalogItem from '../../component/Catalog/Decstop/DecstopCatalogItem';
+import MobileSortMenu from '../../component/Catalog/Mobile/MobileSortMenu';
+import MobileTopModal from '../../component/Catalog/Mobile/MobileTopModal';
 
 const MobileCatalog = () => {
     const [order, setOrder] = useState<string>('ranked')

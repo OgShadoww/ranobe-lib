@@ -1,6 +1,6 @@
 import React from 'react';
-import DecstopCatalog from './DecstopCatalog';
-import MobileCatalog from './MobileCatalog';
+import DecstopCatalog from './Decstop/DecstopCatalog';
+import MobileCatalog from './Mobile/MobileCatalog';
 
 const Catalog = () => {
 

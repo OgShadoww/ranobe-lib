@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '../../app/hook/useTheme';
-import FooterLink from '../FooterLink';
+import FooterLink from '../Footer/FooterLink';
 
 const Footer = () => {
     const {setTheme} = useTheme()

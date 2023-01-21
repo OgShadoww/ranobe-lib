@@ -12,7 +12,7 @@ const MainForumBlock:FC<props> = ({title, type}) => {
 
     return (
         <div className='main-wrapper flex-[2] flex flex-col justify-start items-start'>
-            <h3 className='font-semibold text-[20px] mb-[10px]'>{title}</h3>
+            <h3 className='font-semibold text-[17px] mb-[10px]'>{title}</h3>
             {topics?.map(topic =>
                 <MainTopicsItem key={topic.id} items={topic}/> 
             )}

@@ -1,6 +1,4 @@
 import React, { FC, useEffect, useState } from 'react';
-import { BsChevronDown, BsSortDown } from 'react-icons/bs';
-import DropDownList from '../HeaderComponents/DropDownList';
 
 interface props {
     order: string,

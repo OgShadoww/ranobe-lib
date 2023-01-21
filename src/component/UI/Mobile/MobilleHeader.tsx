@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BsMoon, BsSearch } from 'react-icons/bs';
-import { useTheme } from '../../app/hook/useTheme';
-import AccountItems from '../HeaderComponents/AccountItems';
-import AdaptiveNavbar from '../HeaderComponents/AdaptiveNavbar';
-import Search from '../HeaderComponents/Search';
+import { useTheme } from '../../../app/hook/useTheme';
+import AccountItems from '../../Header/AccountItems';
+import AdaptiveNavbar from '../../Header/Mobile/AdaptiveNavbar';
+import Search from '../../Header/Search';
 
 const MobilleHeader = () => {
     const [visible, setVisible] = useState<boolean>(false)
