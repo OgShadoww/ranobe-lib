@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useTheme } from '../../app/hook/useTheme';
 import DesctopHeader from './Decstop/DesctopHeader';
-import MobilleHeader from './Mobile/MobilleHeader';
+import MobilleHeader from './Mobile/MobileHeader';
 
 
 const Header:FC = () => {        

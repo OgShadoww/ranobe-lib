@@ -23,8 +23,8 @@ const MainGenresList:FC<props> = ({minHeight}) => {
 
     return (
         <div className={baseStyle.join(' ')}>
-            {genres?.slice(30)?.map(genre =>
-                <MainGenresItem key={genre.id} text={genre.name}/>    
+            {genres?.slice(30)?.filter(genre => genre.name !== 'Yuri' && genre.name !== 'Hentai' && genre.name !== 'Yaoi' && genre.name !== 'Etti').map(genre =>
+                <MainGenresItem key={genre.id} text={genre.russian}/>    
             )}
         </div>
     );

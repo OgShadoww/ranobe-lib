@@ -9,6 +9,7 @@ import { useTheme } from '../../app/hook/useTheme';
 import DropDownList from './DropDownList';
 import DropDownListItem from './DropDownListItem';
 import { AiFillSetting } from 'react-icons/ai';
+import {SiTelegram} from 'react-icons/si'
 
 const Account = () => {
     const {theme, setTheme} = useTheme()
@@ -31,15 +32,18 @@ const Account = () => {
                 <DropDownListItem to='/profile' icon={<FaUser className='text-[14px]'/>} text='Профіль'/>
                 <DropDownListItem to='/' icon={<BsFillBookmarkFill className='text-[13px]'/>} text='Мої закладки'/>
                 <DropDownListItem to='/message' icon={<BsFillBellFill className='text-[15px]'/>} text='Повідомлення'/>
-                <div className='h-[1px] m-[8px] border-base overflow-hidden'></div>
+                <div className='h-[1px] m-[8px] border-bottom-base overflow-hidden'></div>
                 <DropDownListItem to='/settings' icon={<AiFillSetting className='text-[14px]'/>} text='Налаштування'/>
-                <div className='h-[1px] m-[8px] border-base overflow-hidden'></div>
+                <div className='h-[1px] m-[8px] border-bottom-base overflow-hidden'></div>
                 <div className='text-center text-secondary text-[12px] mx-[10px] mb-[5px]'>
                     Соц. мережі
                 </div>
                 <div className='px-[10px] flex gap-[5px]'>
-                    <a className='text-[18px] flex justify-center items-center bg-[#d7d70b] h-[26px] text-white px-[12px] min-h-[16px] font-[600] flex-1' href="">
+                    <a className='text-[20px] rounded-[4px] flex justify-center items-center instagram-bg h-[26px] hover:text-white text-white px-[12px] min-h-[16px] font-[600] flex-1' href="https://www.instagram.com/orest_galenza/">
                         <RiInstagramFill/>
+                    </a>
+                    <a className='text-[20px] rounded-[4px] flex justify-center items-center bg-[#2AABEE] h-[26px] hover:text-white text-white px-[12px] min-h-[16px] font-[600] flex-1' href="https://OG_shadoww.t.me">
+                        <SiTelegram/>
                     </a>
                 </div>
             </DropDownList>

@@ -5,7 +5,7 @@ import AccountItems from '../../Header/AccountItems';
 import AdaptiveNavbar from '../../Header/Mobile/AdaptiveNavbar';
 import Search from '../../Header/Search';
 
-const MobilleHeader = () => {
+const MobileHeader = () => {
     const [visible, setVisible] = useState<boolean>(false)
     const {theme, setTheme} = useTheme()
     const [show, setShow] = useState(false)
@@ -25,4 +25,4 @@ const MobilleHeader = () => {
     );
 };
 
-export default MobilleHeader;
+export default MobileHeader;

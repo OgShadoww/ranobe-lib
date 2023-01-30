@@ -24,7 +24,7 @@ const MobileCatalog = () => {
                         <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="text" className='w-full h-[36px] px-[12px] py-[5px] input-border input-background outline-none rounded-[3px] text-[14px] mb-[10px]' placeholder='Пошук по назві' />
                         <div className='flex flex-wrap'>
                             {ranobe?.map(ranobe =>
-                                <CatalogItem key={ranobe.id} items={ranobe}/>    
+                                <CatalogItem key={ranobe.id} item={ranobe}/>    
                             )}
                         </div>
                     </div>

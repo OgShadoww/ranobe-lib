@@ -2,7 +2,7 @@ import Catalog from "../section/Catalog";
 import Main from "../section/Main";
 import Ranobe from "../section/Ranobe";
 import Setting from "../section/Setting";
-import { IRoute } from "../types/RoutesType";
+import { IRoute } from "../types/IRoutes";
 
 export const routers:IRoute[] = [
     {path:'/', element:Main},

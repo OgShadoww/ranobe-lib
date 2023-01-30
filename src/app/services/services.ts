@@ -4,7 +4,9 @@ import { IGenres } from '../../types/IGenres'
 import { IRoles } from '../../types/IRoles'
 import { ITopics } from '../../types/ITopics'
 import { IUser } from '../../types/IUser'
-import { IRanobe } from '../../types/RanobeType'
+import { IRanobe } from '../../types/IRanobe'
+import { IRanobeRelatedManga } from '../../types/IRelatedManga'
+import { IRanobeRelatedAnime } from '../../types/IRelatedAnime'
 
 export const ranobeApi = createApi({
     reducerPath:'AllRanobeApi',
@@ -34,6 +36,20 @@ export const ranobeMoreApi = createApi({
         fetchAllRanobe: build.query<IFullRanobe, number | undefined>({
             query: (num: number | undefined) => ({
                 url:`ranobe/${num}`,
+            })
+        })
+    })
+})
+
+export const ranobeRelatedApi = createApi({
+    reducerPath:'ranobeRelatedApi',
+    baseQuery: fetchBaseQuery({
+        baseUrl:'https://shikimori.one/api'
+    }),
+    endpoints: (build) => ({
+        fetchAllRanobe: build.query<[IRanobeRelatedManga] | [IRanobeRelatedAnime], {num: number, value: string}>({
+            query: ({num, value}) => ({
+                url:`ranobe/${num}/${value}`
             })
         })
     })

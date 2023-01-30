@@ -1,7 +1,7 @@
 import React from 'react';
 import { ranobeApi } from '../../app/services/services';
 import MainRandomItem from './MainRandomItem';
-import { IRanobe } from '../../types/RanobeType';
+import { IRanobe } from '../../types/IRanobe';
 
 const MainRandomList = () => {
     const {data: ranobeItem, isLoading} = ranobeApi.useFetchAllRanobeQuery({limit: 6, order:'random', censored: JSON.parse(localStorage.getItem('censored') || 'true') || true})

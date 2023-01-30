@@ -1,5 +1,5 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import { genresApi, ranobeApi, ranobeApiSearch, ranobeFillterApi, ranobeMoreApi, ranobeRoleApi, topicApi } from "./services/services";
+import { genresApi, ranobeApi, ranobeApiSearch, ranobeFillterApi, ranobeMoreApi, ranobeRelatedApi, ranobeRoleApi, topicApi } from "./services/services";
 
 const combine = combineReducers({
     [ranobeApi.reducerPath]: ranobeApi.reducer,
@@ -9,13 +9,14 @@ const combine = combineReducers({
     [ranobeMoreApi.reducerPath]:ranobeMoreApi.reducer,
     [ranobeRoleApi.reducerPath]:ranobeRoleApi.reducer,
     [ranobeFillterApi.reducerPath]:ranobeFillterApi.reducer,
+    [ranobeRelatedApi.reducerPath]:ranobeRelatedApi.reducer
 })
 
 export const setupStore = () => {
     return configureStore({
         reducer: combine,
         middleware: (getDefaultMiddleware) => 
-            getDefaultMiddleware().concat(ranobeApi.middleware).concat(ranobeApiSearch.middleware).concat(genresApi.middleware).concat(topicApi.middleware).concat(ranobeMoreApi.middleware).concat(ranobeRoleApi.middleware).concat(ranobeFillterApi.middleware)
+            getDefaultMiddleware().concat(ranobeApi.middleware).concat(ranobeApiSearch.middleware).concat(genresApi.middleware).concat(topicApi.middleware).concat(ranobeMoreApi.middleware).concat(ranobeRoleApi.middleware).concat(ranobeFillterApi.middleware).concat(ranobeRelatedApi.middleware)
     })
 }
 

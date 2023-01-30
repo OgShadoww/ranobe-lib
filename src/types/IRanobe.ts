@@ -5,7 +5,7 @@ export interface IRanobe {
     name: string,
     russian: string,
     image:IImage,
-    // genres: string[],
+    genres: string[],
     url: string,
     kind: string,
     score: string,
