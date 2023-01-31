@@ -11,5 +11,5 @@ export const links: ILink[] = [
     {
         text: 'Обсудження',
         id:2
-    }
+    },
 ]

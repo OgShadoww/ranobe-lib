@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { AiFillStar } from 'react-icons/ai';
-import { IScoreStats } from '../../types/IScore';
-import { IStatusStats } from '../../types/IStatus';
-import MediaStatsItem from './MediaStatsItem';
+import { IScoreStats } from '../../../types/IScore';
+import { IStatusStats } from '../../../types/IStatus';
+import MediaStatsItem from '../MediaStatsItem';
 
 interface props {
     title: string,
@@ -12,7 +12,7 @@ interface props {
     score?: string
 }
 
-const MediaStats:FC<props> = ({title, stats, allStats, type, score}) => {
+const DecstopMediaStats:FC<props> = ({title, stats, allStats, type, score}) => {
     if(type === 'status') {
         return (
             <div className='w-[50%] flex flex-col gap-[10px]'>
@@ -53,4 +53,4 @@ const MediaStats:FC<props> = ({title, stats, allStats, type, score}) => {
     );
 };
 
-export default MediaStats;
+export default DecstopMediaStats;

@@ -218,6 +218,9 @@ img {
 .text-blue {
   color: var(--blue);
 }
+.text-link {
+  color: var(--text-link);
+}
 .light-hover:hover {
   background: hsla(240,5%,48%,.05);
   background: var(--background-fill-4);

@@ -68,7 +68,7 @@ const DecstopSimilarRanobe:FC<props> = ({title, items}) => {
                     }}
                     className=' w-fit flex duration-[0.4s] translate-x-[0px] box-border'>
                     {items?.map(item => 
-                        <SimilarRanobeItem key={item.anime === null ? item.manga.id : item.anime.id} item={item}/>
+                        <SimilarRanobeItem type='decstop' key={item.anime === null ? item.manga.id : item.anime.id} item={item}/>
                     )}
                 </div>
             </div>

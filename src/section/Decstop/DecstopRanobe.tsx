@@ -11,7 +11,7 @@ import AboutRanobe from '../../component/Ranobe/AboutRanobe';
 import RanobeGenreItem from '../../component/Ranobe/RanobeGenreItem';
 import DecstopSimilarRanobe from '../../component/Ranobe/Decstop/DecstopSimilarRanobe';
 import SimilarRanobeItem from '../../component/Ranobe/SimilarRanobeItem';
-import MediaStats from '../../component/Ranobe/MediaStats';
+import MediaStats from '../../component/Ranobe/Decstop/DecstopMediaStats';
 
 const DecstopRanobe = () => {
     const params = useParams()
@@ -85,9 +85,10 @@ const DecstopRanobe = () => {
                             <button className='bg-[#6f42c1] text-white px-[10px] w-full py-[5px] rounded-[5px] flex items-center justify-between text-[14px]'><FaFolder/> 傑作 <SlArrowDown/></button>
                         </div>
                         <div className='foreground px-[8px] py-[9px]'>
-                            <AboutRanobe title='Тип' subtitle={ranobe?.kind === 'light_novel' ? 'Ранобе' : ranobe?.kind === 'novel' ? 'Новелла' : ''}/>
-                            <AboutRanobe title='Рік релізу' subtitle={ranobe?.aired_on.slice(0, 4)}/>
-                            <AboutRanobe 
+                            <AboutRanobe type='decstop' title='Тип' subtitle={ranobe?.kind === 'light_novel' ? 'Ранобе' : ranobe?.kind === 'novel' ? 'Новелла' : ''}/>
+                            <AboutRanobe type='decstop' title='Рік релізу' subtitle={ranobe?.aired_on.slice(0, 4)}/>
+                            <AboutRanobe
+                                type='decstop' 
                                 title='Статус' 
                                 subtitle={
                                     ranobe?.status === 'ongoing' ? 'Онгонинг' : 
@@ -97,10 +98,10 @@ const DecstopRanobe = () => {
                                     ranobe?.status === 'discontinued' ? 'Зупиняно' : ''
                                 }
                             />
-                            <AboutRanobe title='Автор' subtitle={autor?.map(autor => autor.person?.name.toString())}/>
-                            <AboutRanobe title='Художник' subtitle={art?.map(art => art.person?.name.toString())}/>
-                            <AboutRanobe title='Всього глав' subtitle={ranobe?.chapters}/>
-                            <AboutRanobe title='Оригінальна назва' subtitle={ranobe?.japanese}/>
+                            <AboutRanobe type='decstop' title='Автор' subtitle={autor?.map(autor => autor.person?.name.toString())}/>
+                            <AboutRanobe type='decstop' title='Художник' subtitle={art?.map(art => art.person?.name.toString())}/>
+                            <AboutRanobe type='decstop' title='Всього глав' subtitle={ranobe?.chapters}/>
+                            <AboutRanobe type='decstop' title='Оригінальна назва' subtitle={ranobe?.japanese}/>
                         </div>
                     </div>
                     <div className='media-content-side'>
