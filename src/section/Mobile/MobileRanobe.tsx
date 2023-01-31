@@ -146,7 +146,7 @@ const MobileRanobe = () => {
                             </div>
                         </div>
                         {related !== undefined ? <MobileSimilarRanobe title="Зв'язанні" items={related}/> : ''}
-                        <div className='flex flex-col justify-center items-center gap-[10px]'>
+                        <div className='flex flex-col justify-center items-center gap-[10px] mt-[10px]'>
                             <MobileMediaStats type='status' title={`В списках в ${allStatuseStats} людей`} allStats={allStatuseStats} stats={ranobe?.rates_statuses_stats}/>
                             <MobileMediaStats score={ranobe?.score} type='rates' title='Оцінки користувачів' allStats={allScoresStats} stats={FiveGradeScore}/>
                         </div>
