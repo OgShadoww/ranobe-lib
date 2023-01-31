@@ -64,7 +64,6 @@ const MobileRanobe = () => {
     const firstLi = useRef<HTMLLIElement>(document.createElement("li"))
     const secondLi = useRef<HTMLLIElement>(document.createElement("li"))
     const mainRef = useRef<HTMLUListElement>(document.createElement("ul"))
-
     return (
         <>
             <div className="media-header">
@@ -118,7 +117,7 @@ const MobileRanobe = () => {
                 </div>
                 {current === 0 ?
                     <div className=''>
-                        <div className='px-[8px] py-[9px] foreground'>
+                        <div className='px-[8px] py-[5px] foreground'>
                             <AboutRanobe 
                                 type='mobile'
                                 title='Статус' 
@@ -135,11 +134,11 @@ const MobileRanobe = () => {
                             <AboutRanobe type='mobile' title='Художник' subtitle={art?.map(art => art.person?.name.toString())}/>
                             <AboutRanobe type='mobile' title='Рік релізу' subtitle={ranobe?.aired_on.slice(0, 4)}/>
                         </div>
-                        <div className='foreground py-[5px] mb-[10px]'>
+                        <div className='foreground py-[2px] mb-[10px]'>
                             <div style={{maxHeight:descHeight ? 'fit-content' : 125}} className='foreground text-[14px] overflow-hidden text-left leading-[1.6] p-[12px] pb-[6px]'>
                                 {ranobe?.description ? ranobe.description.replace(/[^А-яЁё ]/g,"") : 'Немає опису'}
                             </div>
-                            {ranobe ? ranobe?.description.length > 400 ? <button onClick={() => setDescHeight(!descHeight)} className='flex justify-start px-[12px] text-link text-[12px] mt-[3px] mb-[5px]'>{descHeight ? 'Меньше' : 'Детальніше...'}</button> : 'Немає опису' : ''}
+                            {ranobe?.description ?  <button onClick={() => setDescHeight(!descHeight)} className='flex justify-start px-[12px] text-link text-[12px] mt-[3px] mb-[5px]'>{descHeight ? 'Меньше' : 'Детальніше...'}</button> : ''}
                             <div className='flex flex-wrap gap-[8px] px-[12px] py-[9px]'>
                                 {ranobe?.genres.map(genre => 
                                     <RanobeGenreItem key={genre.id} text={genre.russian}/>
