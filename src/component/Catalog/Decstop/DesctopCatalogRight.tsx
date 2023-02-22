@@ -10,6 +10,7 @@ interface props {
 const DecstopCatalogRight:FC<props> = ({setGenre}) => {
     const {data: genres} = genresApi.useFetchAllRanobeQuery('')
     let genreList: number[] = []
+    const [cast, setCast] = useState<boolean>(false)
 
     const handleClick = (id: number, cheked: boolean) => {
         if(!cheked) {
@@ -19,6 +20,10 @@ const DecstopCatalogRight:FC<props> = ({setGenre}) => {
             genreList = genreList.filter(genre => genre !== id)
         }
     }   
+    const handleRemove = () => {
+        setGenre('')
+        setCast(true)
+    }
 
     return (
        <div className='search-filter'>
@@ -36,12 +41,12 @@ const DecstopCatalogRight:FC<props> = ({setGenre}) => {
                         <input placeholder='Фільтр по жанрам' type="text" className='border-bottom-base text-[14px] outline-none placeholder:text-secondary text-primary px-[14px] py-[12px] h-[40px] input-background w-full' />
                         <div className='flex flex-col pt-[10px]'>
                             {genres?.filter(genre => genre.kind === 'manga' && genre.name !== 'Yuri' && genre.name !== 'Hentai' && genre.name !== 'Yaoi' && genre.name !== 'Etti').map(genre => 
-                                <GenresItem key={genre.id} id={genre.id} handleClick={handleClick} text={genre.russian}/>    
+                                <GenresItem key={genre.id} cast={cast} setCast={setCast} id={genre.id} handleClick={handleClick} text={genre.russian}/>    
                             )}
                         </div>
                     </div>
                     <div className='absolute bottom-0 left-0 right-0 z-40 px-[13px] py-[6px] gap-[10px] flex'>
-                        <button className='button-default-color button-default-bg min-h-[16px] text-[14px] font-[600] h-[36px] px-[16px] rounded-[3px] outline-none flex-1'>
+                        <button onClick={() => handleRemove()} className='button-default-color button-default-bg min-h-[16px] text-[14px] font-[600] h-[36px] px-[16px] rounded-[3px] outline-none flex-1'>
                             Скинути
                         </button>
                         <button onClick={() => setGenre(genreList)} className='min-h-[16px] text-[14px] font-[600] h-[36px] px-[16px] bg-[#3cce7b] text-[#fff] rounded-[3px] flex-1'>

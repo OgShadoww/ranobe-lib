@@ -75,13 +75,14 @@ export const ranobeFillterApi = createApi({
         baseUrl:'https://shikimori.one/api'
     }),
     endpoints: (build) => ({
-        fetchAllRanobe: build.query<IRanobe[], {order: string, limit: number, genre?: number}>({
-            query: ({order, limit, genre}) => ({
+        fetchAllRanobe: build.query<IRanobe[], {order: string, limit: number, genre?: number, search?: string}>({
+            query: ({order, limit, genre, search}) => ({
                 url:'ranobe',
                 params: {
                     limit,
                     order,
-                    genre
+                    genre,
+                    search
                 }
             })
         })

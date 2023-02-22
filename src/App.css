@@ -158,6 +158,9 @@ img {
 }
 
 /* varriable styles */
+.overwflow-hidden {
+  overflow: hidden;
+}
 .background-background {
   background-color: var(--background);
 }

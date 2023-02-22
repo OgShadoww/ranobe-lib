@@ -8,16 +8,18 @@ interface props {
     setIsOpen: any,
     name:string,
     icon: any,
-    point: IPointsCatalog[]
+    point: IPointsCatalog[],
+    setNavOpen: any
 }
 
-const DropRightList:FC<props> = ({isOpen, setIsOpen, name, icon, point}) => {
+const DropRightList:FC<props> = ({isOpen, setIsOpen, name, icon, point, setNavOpen}) => {
     const navbarMenuStyles = ['w-[100%] h-[100vh] absolute z-[-10] adaptive-navbar top-0 py-[10px]', 'left-[-100%] top-0 opacity-0']
 
     if(isOpen) {
         navbarMenuStyles.pop()
         navbarMenuStyles.push('left-0 right-0 top-0 z-[100000]')
         document.body.classList.add('overwflow-hidden')
+        setNavOpen(false)
     }
     else {
         document.body.classList.remove('overwflow-hidden')

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BsChevronDown, BsChevronRight, BsSortDown } from 'react-icons/bs';
 import { useDebounce } from '../../app/hook/useDebounse';
 import { ranobeFillterApi } from '../../app/services/services';
-import CatalogItem from '../../component/Catalog/Decstop/DecstopCatalogItem';
+import CatalogItem from '../../component/Catalog/CatalogItem';
 import DecstopCatalogRight from '../../component/Catalog/Decstop/DesctopCatalogRight';
 import DropDownList from '../../component/Header/DropDownList'
 
@@ -13,7 +13,8 @@ const DecstopCatalog = () => {
     const [value, setValue] = useState('рейтингу')
     const [searchTerm, setSearchTerm] = useState("");
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
-    const {data: ranobe} = ranobeFillterApi.useFetchAllRanobeQuery({order: order, limit: 30, genre: genre})
+    const [limit, setLimit] = useState<number>(30)
+    const {data: ranobe} = ranobeFillterApi.useFetchAllRanobeQuery({order: order, limit: limit, genre: genre, search: debouncedSearchTerm})
 
     useEffect(() => {
         setValue('рейтингу')
@@ -90,11 +91,18 @@ const DecstopCatalog = () => {
                     {ranobe?.length !== 0  ?
                         <div className='flex flex-wrap'>
                             {ranobe?.map(ranobe =>
-                                <CatalogItem key={ranobe.id} item={ranobe}/>    
+                                <CatalogItem type='decstop' key={ranobe.id} item={ranobe}/>    
                             )}
+                            {limit < 50 ?
+                                <div onClick={() => setLimit(limit + 10)} className='text-center w-full cursor-pointer  mt-[15px] main-wrapper-out-padding background-background py-[10px]'>
+                                    Показати більше
+                                </div>
+                            :
+                               ''
+                            }
                         </div>
                     :
-                        <div className='text-[24px]'>
+                        <div className='text-[24px] font-[600] mt-[20px]'>
                             <h2>Нічого не знайдено</h2>
                         </div>
                     }

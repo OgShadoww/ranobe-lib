@@ -1,18 +1,27 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 interface props {
     text: string,
     id: number,
-    handleClick: (id: number, cheked: boolean) => void
+    handleClick: (id: number, cheked: boolean) => void,
+    cast: boolean,
+    setCast: any
 }
 
-const GenresItem:FC<props> = ({text, handleClick, id}) => {
+const GenresItem:FC<props> = ({text, handleClick, id, cast, setCast}) => {
     const [cheked, setCheked] = useState<boolean>(false)
 
     const handleChecking = () => {
         setCheked(!cheked)
         handleClick(id, cheked)
     }
+    useEffect(() => {
+        if(cast) {
+            setCheked(false)
+            setCast(false)
+        }
+    }, [cast])
+
 
     return (
         <label className='flex w-full px-[10px] py-[4px] items-center gap-[10px] cursor-pointer'>

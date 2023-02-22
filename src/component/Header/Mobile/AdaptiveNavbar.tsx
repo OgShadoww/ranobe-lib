@@ -54,7 +54,7 @@ const AdaptiveNavbar = () => {
                 <div className='flex flex-col'>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/' icon={<FaHome/>} text='Головна'/>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/profile' icon={<CgProfile/>} text='Профіль'/>
-                    <AdaptiveNavbarItem onClick={() => setCatalogOpen(true)} to='/catalog' iconMore={<BsChevronLeft className='absolute left-[5px] text-[#8f8e8e]'/>} icon={<GiHamburgerMenu className='text-[14px]'/>} text='Каталог'/>
+                    <AdaptiveNavbarItem onClick={() => setCatalogOpen(true)} iconMore={<BsChevronLeft className='absolute left-[5px] text-[#8f8e8e]'/>} icon={<GiHamburgerMenu className='text-[14px]'/>} text='Каталог'/>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/forum' icon={<AiFillWechat/>} text='Форум'/>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/faq' icon={<FaQuestionCircle className='text-[13px]'/>} text='FAQ'/>
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/news' icon={<TiNews />} text='Новини'/>
@@ -62,7 +62,7 @@ const AdaptiveNavbar = () => {
                     <AdaptiveNavbarItem onClick={() => setOpen(false)} to='/settings' icon={<AiFillSetting />} text='Налаштування'/>
                 </div>
             </div>
-            <DropRightList setIsOpen={setCatalogOpen} isOpen={catalogOpen} icon={<GiHamburgerMenu/>} point={point} name="Каталог"/>
+            <DropRightList setNavOpen={setOpen} setIsOpen={setCatalogOpen} isOpen={catalogOpen} icon={<GiHamburgerMenu/>} point={point} name="Каталог"/>
         </div>
     );
 };
