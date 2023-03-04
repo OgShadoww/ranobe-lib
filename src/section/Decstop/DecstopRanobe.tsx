@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ranobeMoreApi, ranobeRelatedApi, ranobeRoleApi } from '../../app/services/services';
+import { ranobeMoreApi, ranobeRelatedApi, ranobeRoleApi, ranobeTopicApi } from '../../app/services/services';
 import {FaPencilAlt, FaRss} from 'react-icons/fa'
-import { AiFillStar, AiFillWarning } from 'react-icons/ai'
+import { AiFillStar, AiFillWarning, AiFillWechat } from 'react-icons/ai'
 import {BsFillPlusSquareFill} from 'react-icons/bs'
 import {FaFolder} from 'react-icons/fa'
 import {SlArrowDown} from 'react-icons/sl'
@@ -17,6 +17,7 @@ const DecstopRanobe = () => {
     const params = useParams()
     const [current, setCurrent] = useState(0)
     const {data: ranobe} = ranobeMoreApi.useFetchAllRanobeQuery(Number(params.id))
+    const {data: ranobeTopics} = ranobeTopicApi.useFetchAllRanobeQuery({id: Number(params.id), limit: 8})
     let {data: role} = ranobeRoleApi.useFetchAllRanobeQuery(Number(params.id))
     let {data: related} = ranobeRelatedApi.useFetchAllRanobeQuery({num: Number(params.id), value: 'related'})
     let autor = role?.filter(role => role.roles[0] === 'Story')
@@ -152,7 +153,34 @@ const DecstopRanobe = () => {
                                             <MediaStats score={ranobe?.score} type='rates' title='Оцінки користувачів' allStats={allScoresStats} stats={FiveGradeScore}/>
                                         </div>
                                     </div>
-                                : ''}
+                                :
+                                    <div className='flex flex-col gap-[20px] pb-[20px]'>
+                                        {ranobeTopics?.map(topic => 
+                                            <div className='foreground border-light p-[16px] flex gap-[20px] rounded-[4px]'>
+                                                <div className='coment-count flex justify-center items-center gap-[10px] text-[#868e96] text-[15px]'>
+                                                    <AiFillWechat/> {topic.comments_count}
+                                                </div>
+                                                <div className='border-l-base pl-[16px] flex flex-col gap-[6px]'>
+                                                    <a className='text-primary hover:underline font-[600] text-[15px]  text-left'>
+                                                        {topic.topic_title}
+                                                    </a>    
+                                                    <div className='flex text-[13px] items-center gap-[8px]'>
+                                                        <img className='w-[28px]' src={`${topic.user.image.x160}`} alt="" />
+                                                        <a className='text-link cursor-pointer hover:underline'>
+                                                            {topic.user.nickname}
+                                                        </a>
+                                                        <span className='text-[12px]'>
+                                                            {topic.created_at.slice(0, 4)} рік
+                                                        </span>
+                                                        <button className='bg-[#2ea3e7] px-[6px] py-[3px] h-auto font-[700] leading-[1] text-[12px] cursor-pointer rounded-[3px]'>
+                                                            {topic.forum.name}
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                        )}
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>

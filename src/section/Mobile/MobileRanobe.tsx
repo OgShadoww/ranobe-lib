@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { AiFillStar, AiFillWarning } from 'react-icons/ai';
+import { AiFillStar, AiFillWarning, AiFillWechat } from 'react-icons/ai';
 import { BsFillPlusSquareFill } from 'react-icons/bs';
 import { FaFolder, FaPencilAlt, FaRss } from 'react-icons/fa';
 import { SlArrowDown } from 'react-icons/sl';
 import { useParams } from 'react-router-dom';
-import { ranobeMoreApi, ranobeRelatedApi, ranobeRoleApi } from '../../app/services/services';
+import { ranobeMoreApi, ranobeRelatedApi, ranobeRoleApi, ranobeTopicApi } from '../../app/services/services';
 import AboutRanobe from '../../component/Ranobe/AboutRanobe';
 import MediaStats from '../../component/Ranobe/Decstop/DecstopMediaStats';
 import MobileMediaStats from '../../component/Ranobe/Mobile/MobileMediaStats';
@@ -17,6 +17,7 @@ const MobileRanobe = () => {
     const [current, setCurrent] = useState(0)
     const {data: ranobe} = ranobeMoreApi.useFetchAllRanobeQuery(Number(params.id))
     const {data: related} = ranobeRelatedApi.useFetchAllRanobeQuery({num: Number(params.id), value: 'related'})
+    const {data: ranobeTopics} = ranobeTopicApi.useFetchAllRanobeQuery({id: Number(params.id), limit: 8})
     const [descHeight, setDescHeight] = useState(false)
 
     let {data: role} = ranobeRoleApi.useFetchAllRanobeQuery(Number(params.id))
@@ -92,8 +93,8 @@ const MobileRanobe = () => {
                         <div className='px-[8px] text-[14px] py-[5px] text-mutted whitespace-nowrap'>
                             <div className='flex justify-center items-center gap-[4px]'>
                                 <AiFillStar className='text-[#ffb656] text-[12px]'/>
-                                <p className='text-white text-[14px] font-[600]'>{ranobe?.score}</p>
-                                <p className='text-white text-[12px] opacity-[0.7]'>
+                                <p className='text-[14px] font-[600]'>{ranobe?.score}</p>
+                                <p className='text-[12px] opacity-[0.7]'>
                                     {ranobe?.rates_scores_stats.reduce((rate: number, initial) => {
                                         return (rate + initial.value)
                                     }, 0)}
@@ -116,7 +117,7 @@ const MobileRanobe = () => {
                     </ul>
                 </div>
                 {current === 0 ?
-                    <div className=''>
+                    <div>
                         <div className='px-[8px] py-[5px] foreground'>
                             <AboutRanobe 
                                 type='mobile'
@@ -152,7 +153,37 @@ const MobileRanobe = () => {
                         </div>
                     </div>
                 :
-                    ''
+                <div className='flex foreground flex-col gap-[20px] p-[12px]'>
+                {ranobeTopics?.map(topic => 
+                    <div className='foreground border-light p-[10px] flex justify-between gap-[20px] rounded-[6px]'>
+                        <div className=' flex flex-col gap-[6px]'>
+                            <a className='text-primary hover:underline font-[600] text-[13px] text-left'>
+                                {topic.topic_title}
+                            </a>    
+                            <div className='flex flex-col text-[13px] items-start justify-start gap-[8px]'>
+                                <div className='flex items-center gap-[4px]'>
+                                    <img className='w-[24px] rounded-[3px]' src={`${topic.user.image.x160}`} alt="" />
+                                    <a className='text-link cursor-pointer hover:underline'>
+                                        {topic.user.nickname}
+                                    </a>
+                                    <span className='text-[13px]'>
+                                        {topic.created_at.slice(0, 4)} рік
+                                    </span>
+                                </div>
+                                <button className='bg-[#2ea3e7] text-[#fff] px-[6px] py-[3px] h-auto font-[700] leading-[1] text-[12px] cursor-pointer rounded-[3px]'>
+                                    {topic.forum.name}
+                                </button>
+                            </div>
+                        </div>
+                        <div className='flex flex-col justify-between items-end'>
+                            <div className='coment-count flex justify-center items-center gap-[10px] text-[#868e96] text-[15px]'>
+                                <AiFillWechat/> {topic.comments_count}
+                            </div>
+                            <a className='text-link text-[14px]' href="">Переглянути</a>
+                        </div>
+                    </div>    
+                )}
+            </div>
                 }
             </div>
         </>

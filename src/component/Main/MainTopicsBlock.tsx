@@ -8,7 +8,7 @@ interface props {
 }
 
 const MainForumBlock:FC<props> = ({title, type}) => {
-    const {data: topics} = topicApi.useFetchAllRanobeQuery({limit: 3, forum: type})
+    const {data: topics} = topicApi.useFetchAllRanobeQuery({limit: 3, page: 1, forum: type})
 
     return (
         <div className='main-wrapper flex-[2] flex flex-col justify-start items-start'>

@@ -4,9 +4,11 @@ import { IGenres } from '../../types/IGenres'
 import { IRoles } from '../../types/IRoles'
 import { ITopics } from '../../types/ITopics'
 import { IUser } from '../../types/IUser'
+import { IForum } from '../../types/IForum'
 import { IRanobe } from '../../types/IRanobe'
 import { IRanobeRelatedManga } from '../../types/IRelatedManga'
 import { IRanobeRelatedAnime } from '../../types/IRelatedAnime'
+
 
 export const ranobeApi = createApi({
     reducerPath:'AllRanobeApi',
@@ -22,6 +24,34 @@ export const ranobeApi = createApi({
                     order,
                     censored
                 }
+            })
+        })
+    })
+})
+
+export const forumApi = createApi({
+    reducerPath:'AllForumsApi',
+    baseQuery: fetchBaseQuery({
+        baseUrl:'https://shikimori.one/api'
+    }),
+    endpoints: (build) => ({
+        AllForumsApi: build.query<IForum[], string>({
+            query: () => ({
+                url:'forums',
+            })
+        })
+    })
+})
+
+export const ranobeTopicApi = createApi({
+    reducerPath:'ranobeTopicApi',
+    baseQuery: fetchBaseQuery({
+        baseUrl:'https://shikimori.one/api'
+    }),
+    endpoints: (build) => ({
+        fetchAllRanobe: build.query<ITopics[], {id: number, limit: number}>({
+            query: ({id, limit}) => ({
+                url:`ranobe/${id}/topics?limit=${limit}`,
             })
         })
     })
@@ -127,11 +157,12 @@ export const topicApi = createApi({
         baseUrl:'https://shikimori.one/api'
     }),
     endpoints: (build) => ({
-        fetchAllRanobe: build.query<ITopics[], {limit: number, forum: string}>({
-            query: ({limit, forum}) => ({
+        fetchAllRanobe: build.query<ITopics[], {limit: number, page: number, forum: string}>({
+            query: ({limit, page, forum}) => ({
                 url:'topics',
                 params: {
                     limit,
+                    page,
                     forum
                 }
             })
