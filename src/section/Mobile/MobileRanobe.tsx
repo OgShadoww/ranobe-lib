@@ -154,36 +154,36 @@ const MobileRanobe = () => {
                     </div>
                 :
                 <div className='flex foreground flex-col gap-[20px] p-[12px]'>
-                {ranobeTopics?.map(topic => 
-                    <div className='foreground border-light p-[10px] flex justify-between gap-[20px] rounded-[6px]'>
-                        <div className=' flex flex-col gap-[6px]'>
-                            <a className='text-primary hover:underline font-[600] text-[13px] text-left'>
-                                {topic.topic_title}
-                            </a>    
-                            <div className='flex flex-col text-[13px] items-start justify-start gap-[8px]'>
-                                <div className='flex items-center gap-[4px]'>
-                                    <img className='w-[24px] rounded-[3px]' src={`${topic.user.image.x160}`} alt="" />
-                                    <a className='text-link cursor-pointer hover:underline'>
-                                        {topic.user.nickname}
-                                    </a>
-                                    <span className='text-[13px]'>
-                                        {topic.created_at.slice(0, 4)} рік
-                                    </span>
+                    {ranobeTopics?.map(topic => 
+                        <div className='foreground border-light p-[10px] flex justify-between gap-[20px] rounded-[6px]'>
+                            <div className=' flex flex-col gap-[6px]'>
+                                <a className='text-primary hover:underline font-[600] text-[13px] text-left'>
+                                    {topic.topic_title}
+                                </a>    
+                                <div className='flex flex-col text-[13px] items-start justify-start gap-[8px]'>
+                                    <div className='flex items-center gap-[4px]'>
+                                        <img className='w-[24px] rounded-[3px]' src={`${topic.user.image.x160}`} alt="" />
+                                        <a className='text-link cursor-pointer hover:underline'>
+                                            {topic.user.nickname}
+                                        </a>
+                                        <span className='text-[13px]'>
+                                            {topic.created_at.slice(0, 4)} рік
+                                        </span>
+                                    </div>
+                                    <button className='bg-[#2ea3e7] text-[#fff] px-[6px] py-[3px] h-auto font-[700] leading-[1] text-[12px] cursor-pointer rounded-[3px]'>
+                                        {topic.forum.name}
+                                    </button>
                                 </div>
-                                <button className='bg-[#2ea3e7] text-[#fff] px-[6px] py-[3px] h-auto font-[700] leading-[1] text-[12px] cursor-pointer rounded-[3px]'>
-                                    {topic.forum.name}
-                                </button>
                             </div>
-                        </div>
-                        <div className='flex flex-col justify-between items-end'>
-                            <div className='coment-count flex justify-center items-center gap-[10px] text-[#868e96] text-[15px]'>
-                                <AiFillWechat/> {topic.comments_count}
+                            <div className='flex flex-col justify-between items-end'>
+                                <div className='coment-count flex justify-center items-center gap-[10px] text-[#868e96] text-[15px]'>
+                                    <AiFillWechat/> {topic.comments_count}
+                                </div>
+                                <a className='text-link text-[14px]' href="">Переглянути</a>
                             </div>
-                            <a className='text-link text-[14px]' href="">Переглянути</a>
-                        </div>
-                    </div>    
-                )}
-            </div>
+                        </div>    
+                    )}
+                </div>
                 }
             </div>
         </>

@@ -156,7 +156,7 @@ const DecstopRanobe = () => {
                                 :
                                     <div className='flex flex-col gap-[20px] pb-[20px]'>
                                         {ranobeTopics?.map(topic => 
-                                            <div className='foreground border-light p-[16px] flex gap-[20px] rounded-[4px]'>
+                                            <div key={topic.id} className='foreground border-light p-[16px] flex gap-[20px] rounded-[4px]'>
                                                 <div className='coment-count flex justify-center items-center gap-[10px] text-[#868e96] text-[15px]'>
                                                     <AiFillWechat/> {topic.comments_count}
                                                 </div>

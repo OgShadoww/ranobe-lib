@@ -1,4 +1,4 @@
-import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { forumApi, genresApi, ranobeApi, ranobeApiSearch, ranobeFillterApi, ranobeMoreApi, ranobeRelatedApi, ranobeRoleApi, ranobeTopicApi, topicApi } from "./services/services";
 
 const combine = combineReducers({
@@ -10,6 +10,7 @@ const combine = combineReducers({
     [ranobeFillterApi.reducerPath]:ranobeFillterApi.reducer,
     [ranobeRelatedApi.reducerPath]:ranobeRelatedApi.reducer,
     [forumApi.reducerPath]: forumApi.reducer,
+    [ranobeTopicApi.reducerPath]: ranobeTopicApi.reducer,
     [topicApi.reducerPath]: topicApi.reducer,
 })
 

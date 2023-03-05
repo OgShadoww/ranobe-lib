@@ -3,7 +3,6 @@ import { IFullRanobe } from '../../types/IFullRanobe'
 import { IGenres } from '../../types/IGenres'
 import { IRoles } from '../../types/IRoles'
 import { ITopics } from '../../types/ITopics'
-import { IUser } from '../../types/IUser'
 import { IForum } from '../../types/IForum'
 import { IRanobe } from '../../types/IRanobe'
 import { IRanobeRelatedManga } from '../../types/IRelatedManga'
@@ -49,7 +48,7 @@ export const ranobeTopicApi = createApi({
         baseUrl:'https://shikimori.one/api'
     }),
     endpoints: (build) => ({
-        fetchAllRanobe: build.query<ITopics[], {id: number, limit: number}>({
+        fetchAllRanobe: build.query<ITopics[], {id: string | number, limit: number}>({
             query: ({id, limit}) => ({
                 url:`ranobe/${id}/topics?limit=${limit}`,
             })
