@@ -1,37 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { forumApi, topicApi } from '../app/services/services';
-import ForumMenuItem from '../component/Forum/ForumMenuItem';
+import React from 'react';
+import DecstopForum from './Decstop/DecstopForum';
+import MobileForum from './Mobile/MobileForum';
 
 const Forum = () => {
-    const [forum, setForum] = useState<string>('')
-    const {data:forums} = forumApi.useAllForumsApiQuery('')
-    const {data: topics} = topicApi.useFetchAllRanobeQuery({limit: 6, page:3, forum: 'news'})
-
-    const handleSetForum = (id:string) => {
-        setForum(id)
+    if(window.innerWidth > 1024) {
+        return <DecstopForum/>
     }
-    useEffect(() => {
-        setForum('animanga')
-    }, [])
-
+    if(window.innerWidth <= 1024) {
+       return <MobileForum/>
+    }
     return (
-        <div className='container flex'>
-            <div className='w-[210px]'>
-                <div>
-                    <div className='forum-popup'>
-
-                    </div>
-                    <div className='flex flex-col gap-[5px]'>
-                        {forums?.map(forum => 
-                            <ForumMenuItem key={forum.id} onClick={handleSetForum} text={forum.name} value={forum.permalink}/>
-                        )}
-                    </div>
-                </div>
-            </div>
-            <div className='flex-1'>
-
-            </div>
-        </div>
+        <></>
     );
 };
 

@@ -1,3 +1,4 @@
+import AboutForum from "../section/AboutForum";
 import Catalog from "../section/Catalog";
 import Faq from "../section/Faq";
 import Forum from "../section/Forum";
@@ -10,6 +11,7 @@ export const routers:IRoute[] = [
     {path:'/', element:Main},
     {path:'/catalog', element:Catalog},
     {path:'/forum', element:Forum},
+    {path:'/:id', element: AboutForum},
     {path:'/faq', element:Faq},
     {path:'/news', element:Main},
     {path:'/contact', element:Main},

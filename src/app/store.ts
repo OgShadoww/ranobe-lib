@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { forumApi, genresApi, ranobeApi, ranobeApiSearch, ranobeFillterApi, ranobeMoreApi, ranobeRelatedApi, ranobeRoleApi, ranobeTopicApi, topicApi } from "./services/services";
+import { forumApi, forumMoreApi, genresApi, ranobeApi, ranobeApiSearch, ranobeFillterApi, ranobeMoreApi, ranobeRelatedApi, ranobeRoleApi, ranobeTopicApi, topicApi } from "./services/services";
 
 const combine = combineReducers({
     [ranobeApi.reducerPath]: ranobeApi.reducer,
@@ -12,13 +12,14 @@ const combine = combineReducers({
     [forumApi.reducerPath]: forumApi.reducer,
     [ranobeTopicApi.reducerPath]: ranobeTopicApi.reducer,
     [topicApi.reducerPath]: topicApi.reducer,
+    [forumMoreApi.reducerPath]: forumMoreApi.reducer
 })
 
 export const setupStore = () => {
     return configureStore({
         reducer: combine,
         middleware: (getDefaultMiddleware) => 
-            getDefaultMiddleware().concat(ranobeApi.middleware).concat(ranobeApiSearch.middleware).concat(genresApi.middleware).concat(ranobeMoreApi.middleware).concat(ranobeRoleApi.middleware).concat(ranobeFillterApi.middleware).concat(ranobeRelatedApi.middleware).concat(forumApi.middleware).concat(ranobeTopicApi.middleware).concat(topicApi.middleware)
+            getDefaultMiddleware().concat(ranobeApi.middleware).concat(ranobeApiSearch.middleware).concat(genresApi.middleware).concat(ranobeMoreApi.middleware).concat(ranobeRoleApi.middleware).concat(ranobeFillterApi.middleware).concat(ranobeRelatedApi.middleware).concat(forumApi.middleware).concat(ranobeTopicApi.middleware).concat(topicApi.middleware).concat(forumMoreApi.middleware)
     })
 }
 

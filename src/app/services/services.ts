@@ -42,6 +42,21 @@ export const forumApi = createApi({
     })
 })
 
+export const forumMoreApi = createApi({
+    reducerPath:'forumMoreApi',
+    baseQuery: fetchBaseQuery({
+        baseUrl:'https://shikimori.one/api'
+    }),
+    endpoints: (build) => ({
+        AllForumsApi: build.query<ITopics, number>({
+            query: (id: number) => ({
+                url:`topics/${id}`,
+            })
+        })
+    })
+})
+
+
 export const ranobeTopicApi = createApi({
     reducerPath:'ranobeTopicApi',
     baseQuery: fetchBaseQuery({

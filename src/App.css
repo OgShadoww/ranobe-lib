@@ -176,6 +176,9 @@ img {
 .background-hightlight {
   background-color: var(--background-highlight);
 }
+.dropdown-background {
+  background-color: var(--dropdown-bg);
+}
 .background-fill-4 {
   background-color: var(--background-fill-4);
 }
