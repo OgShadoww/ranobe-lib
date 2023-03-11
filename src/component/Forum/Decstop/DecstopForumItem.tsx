@@ -14,7 +14,7 @@ const DecstopForumItem:FC<props> = ({item}) => {
                 <AiFillWechat/> {item.comments_count}
             </div>
             <div className='border-l-base pl-[16px] flex flex-col gap-[8px] items-start w-full'>
-                <Link to={`/${item.id}`} className='text-[15px] font-[600] text-primary hover:underline'>
+                <Link to={`/${item.id}/forum`} className='text-[15px] font-[600] text-primary hover:underline'>
                     {item.topic_title}
                 </Link>
                 <div className='text-[13px] text-mutted text-left'>

@@ -13,7 +13,7 @@ export const routers:IRoute[] = [
     {path:'/catalog', element:Catalog},
     {path:'/:id', element:Ranobe},
     {path:'/forum', element:Forum},
-    // {path:'/:number', element: AboutForum},
+    {path:'/:id/forum', element: AboutForum},
     {path:'/faq', element:Faq},
     {path:'/news', element:Main},
     {path:'/contact', element:Main},

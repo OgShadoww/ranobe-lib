@@ -9,7 +9,7 @@ interface props {
 
 const MobileForumItem:FC<props> = ({item}) => {
     return (
-        <Link to={`/${item.id}`} className='foreground p-[10px] border-light rounded-[6px] transition-colors flex gap-[20px] relative w-full'>
+        <Link to={`/${item.id}/forum`} className='foreground p-[10px] border-light rounded-[6px] transition-colors flex gap-[20px] relative w-full'>
             <div className='flex flex-col gap-[8px] items-start w-full'>
                 <div className='text-[15px] font-[600] text-primary flex justify-between w-full'>
                     {item.topic_title}
