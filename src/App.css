@@ -212,6 +212,9 @@ img {
 .border-bottom-base {
   border-bottom: 1px solid var(--border-base);
 }
+.border-top-base {
+  border-top: 1px solid var(--border-base);
+}
 .border-base {
   border: 1px solid var(--border-base);
 }

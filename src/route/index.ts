@@ -1,3 +1,4 @@
+import MobileTippy from "../component/UI/Mobile/MobileTippy";
 import AboutForum from "../section/AboutForum";
 import Catalog from "../section/Catalog";
 import Faq from "../section/Faq";
@@ -10,12 +11,12 @@ import { IRoute } from "../types/IRoutes";
 export const routers:IRoute[] = [
     {path:'/', element:Main},
     {path:'/catalog', element:Catalog},
+    {path:'/:id', element:Ranobe},
     {path:'/forum', element:Forum},
-    {path:'/:id', element: AboutForum},
+    // {path:'/:number', element: AboutForum},
     {path:'/faq', element:Faq},
     {path:'/news', element:Main},
     {path:'/contact', element:Main},
     {path:'/settings', element:Setting},
     {path:'/profile', element:Main},
-    {path:'/:id', element:Ranobe},
 ]

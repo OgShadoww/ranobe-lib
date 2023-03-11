@@ -17,9 +17,6 @@ const MobileCatalog = () => {
     const [genre, setGenre] = useState()
     const {data: ranobe} = ranobeFillterApi.useFetchAllRanobeQuery({order: order, limit: 30, genre: genre, search: debouncedSearchTerm})
 
-    const changeVisible = (value: number) => {
-        setVisible(value)
-    }
     useEffect(() => {
         if(filterVisible) {
             document.body.classList.add('overwflow-hidden')
@@ -36,7 +33,7 @@ const MobileCatalog = () => {
                         <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="text" className='w-full h-[36px] px-[12px] py-[5px] input-border input-background outline-none rounded-[3px] text-[14px] mb-[10px]' placeholder='Пошук по назві' />
                         <div className='flex flex-wrap'>
                             {ranobe?.map(ranobe =>
-                                <CatalogItem visible={visible} setVisible={changeVisible} type='mobile' key={ranobe.id} item={ranobe}/>    
+                                <CatalogItem visible={visible} setVisible={setVisible} type='mobile' key={ranobe.id} item={ranobe}/>    
                             )}
                         </div>
                     </div>
