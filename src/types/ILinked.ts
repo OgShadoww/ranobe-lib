@@ -1,9 +1,12 @@
+import { IImage } from "./IImage"
+
 export interface ILinked {
     id: number,
     name: string,
     russian: string,
+    image: IImage,
     url: string,
-    kin: string,
+    kind: string,
     score: string,
     status: string,
     episodes: number,

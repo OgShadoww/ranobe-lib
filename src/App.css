@@ -191,6 +191,9 @@ img {
 .background-elevated-2 {
   background-color: var(--background-elevated-2);
 }
+.background-dropdown {
+  background-color: var(--dropdown-bg);
+}
 .primary-lighten {
   background-color: var(--primary-lighten);
 }

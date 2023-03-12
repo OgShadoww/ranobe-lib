@@ -34,7 +34,7 @@ const DecstopForum = () => {
                 {topics !== undefined ?
                     <div className='flex flex-col gap-[20px]'>
                         {topics.map(topic => 
-                        <DecstopForumItem item={topic}/>  
+                            <DecstopForumItem key={topic.id} item={topic}/>  
                         )}
                     </div>
                 :
