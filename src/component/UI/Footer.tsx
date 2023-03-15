@@ -7,9 +7,6 @@ const Footer = () => {
     
     return (
         <div className='w-full relative footer flex flex-col lg:items-start md:items-start sm:items-center items-center gap-[10px] justify-around pb-[20px]'>
-            <ul className="lightrope">
-                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-            </ul>
             <div className='flex gap-[10px] justify-between'>
                 <p className='font-semibold text-[18px]'>Тема сайта</p>
                 <div onClick={() => setTheme('light')} className='bg-white border-[#e5e5e5] border-[1.5px]  pt-[1px] pr-[4px] w-[22px] h-[22px] rounded-[2px] text-black cursor-pointer'>А</div>
