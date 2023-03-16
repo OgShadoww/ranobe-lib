@@ -170,6 +170,9 @@ img {
 .background-primary-lighten {
   background-color: var(--primary-lighten);
 }
+.top-0 {
+  top: 0;
+}
 .foreground {
   background-color: var(--foreground);
 }
@@ -277,6 +280,30 @@ img {
 }
 .instagram-bg {
   background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.button {
+  display: inline-block;
+  min-height: 16px;
+  height: 32px;
+  margin: 0;
+  padding: 0 16px;
+  color: var(--button-default-color);
+  line-height: 32px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: none;
+  text-shadow: none;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  outline: 0;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-default-bg);
+  cursor: pointer;
 }
 
 /* modal */

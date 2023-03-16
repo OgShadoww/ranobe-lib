@@ -32,10 +32,18 @@ const DecstopForum = () => {
             </div>
             <div className='flex-1'>
                 {topics !== undefined ?
-                    <div className='flex flex-col gap-[20px]'>
+                        <div className='flex flex-col gap-[20px] pb-[10px]'>
                         {topics.map(topic => 
                             <DecstopForumItem key={topic.id} item={topic}/>  
                         )}
+                        <div className='w-full flex justify-between px-[10px]'>
+                            <button onClick={() => setPage(page - 1)} className={page >= 1 ? 'button' : 'button select-none pointer-events-none opacity-[0.6]'}>
+                                Назад
+                            </button>
+                            <button onClick={() => setPage(page + 1)} className='button'>
+                                Вперед
+                            </button>
+                        </div>
                     </div>
                 :
                     'div'

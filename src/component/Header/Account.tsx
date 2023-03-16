@@ -10,6 +10,7 @@ import DropDownList from './DropDownList';
 import DropDownListItem from './DropDownListItem';
 import { AiFillSetting } from 'react-icons/ai';
 import {SiTelegram} from 'react-icons/si'
+import { BiUser } from 'react-icons/bi';
 
 const Account = () => {
     const {theme, setTheme} = useTheme()
@@ -26,7 +27,7 @@ const Account = () => {
             <AccountItems icon={<BsBookmark/>}/>
             <AccountItems icon={<BsMoon/>} onClick={() => handleTheme()}/>
             <div onClick={() => setVisible(!visible)} className='cursor-pointer ml-[3px]'>
-                <img className='w-[40px] rounded-[4px]' src="https://ranobelib.me/uploads/users/3899409/cH6MOt7Uqy0e.jpg" alt="" />
+                <BiUser/>
             </div>
             <DropDownList isVisible={visible}>
                 <DropDownListItem to='/profile' icon={<FaUser className='text-[14px]'/>} text='Профіль'/>

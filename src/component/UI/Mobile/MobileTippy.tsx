@@ -22,24 +22,22 @@ const MobileTippy:FC<props> = ({isVisible, item, setIsVisible}) => {
 
     useEffect(() => {
         if(isVisible) {
-            document.body.classList.add('overwflow-hidden')
+            // document.body.classList.add('overwflow-hidden')
+            document.body.classList.add('top-0', 'fixed')
             fetch(`https://shikimori.one/api/ranobe/${item.id}`).then(item => item.json()).then(item => setAboutRanobe(item))
             fetch(`https://shikimori.one/api/ranobe/${item.id}/roles`).then(item => item.json()).then(item => setRanobeRole(item))
         }
         else {
             document.body.classList.remove('overwflow-hidden')
+            document.body.classList.remove('top-0', 'fixed')
         }
         return (() => {
             document.body.classList.remove('overwflow-hidden')
         })
     }, [isVisible])
-    if(ranobeRole) {
-        console.log(autor)
-    }
-
 
     return (
-        <div className={isVisible ? 'pointer-events-all absolute translate-x-[0%] transition-all w-full foreground z-[30] top-0 left-0 duration-[0.4s] overflow-scroll max-h-[100vh] h-[100vh] pb-[20px]' : 'foreground absolute translate-x-[100%] left-0 z-30 w-full h-[100vh] top-0 duration-[0.4s] pointer-events-none transition-all'}>
+        <div className={isVisible ? 'pointer-events-all absolute translate-x-[0%] transition-all w-full foreground z-[30] top-0 left-0 duration-[0.4s] overflow-scroll max-h-[100vh] h-[100vh] pb-[30px]' : 'foreground absolute translate-x-[100%] left-0 z-30 w-full h-[100vh] top-0 duration-[0.4s] pointer-events-none transition-all'}>
             <div className='z-[150] transition-all relative'>
                 <div className="h-full overflow-y-auto overscroll-contain transition-all">
                     <div className="flex flex-col gap-[8px] p-[15px] relative">
@@ -55,9 +53,9 @@ const MobileTippy:FC<props> = ({isVisible, item, setIsVisible}) => {
                                             <AiFillStar className='text-[#ffb656] text-[22px]'/>
                                             <AiFillStar className='text-[#ffb656] text-[22px]'/>
                                         </div>
-                                        <p className='text-white text-[22px] font-[600]'>{item?.score}</p>
+                                        <p className='text-[22px] font-[600]'>{item?.score}</p>
                                     </div>
-                                    <p className='text-white text-[17px] opacity-[0.7]'>
+                                    <p className='text-[17px] opacity-[0.7]'>
                                         Голосів {aboutRanobe?.rates_scores_stats.reduce((rate: number, initial) => {
                                             return (rate + initial.value)
                                         }, 0)}
@@ -68,18 +66,18 @@ const MobileTippy:FC<props> = ({isVisible, item, setIsVisible}) => {
                                 </button>   
                             </div>
                         </div>
-                        <div className='flex flex-col justify-start items-start'>
+                        <div className='flex flex-col gap-[4px] justify-start items-start'>
                             <h2 className='text-[20px] text-left'>
                                 {aboutRanobe?.english}
                             </h2>
-                            <p className='text-[14px]'>
+                            <p className='text-[14px] text-left'>
                                 {aboutRanobe?.russian}
                             </p>
                         </div>
                         <div className='mt-[16px] flex flex-col gap-[10px]'>
                             <div className='flex gap-[24px] rounded-[3px] cursor-pointer text-left light-hover'>
                                 <div className='text-[14px] font-[600]'>
-                                    Автор
+                                    Автор:
                                 </div>
                                 <div className='overflow-hidden text-[14px]'>
                                     {autor?.map(autor => autor.person?.name)}
@@ -87,7 +85,7 @@ const MobileTippy:FC<props> = ({isVisible, item, setIsVisible}) => {
                             </div>
                             <div className='flex gap-[24px] rounded-[3px] cursor-pointer text-left light-hover'>
                                 <div className='text-[14px] font-[600]'>
-                                    Художник
+                                    Художник:
                                 </div>
                                 <div className='overflow-hidden text-[14px]'>
                                     {art?.map(art => art.person?.name)}
@@ -95,7 +93,7 @@ const MobileTippy:FC<props> = ({isVisible, item, setIsVisible}) => {
                             </div>
                             <div className='flex gap-[24px] rounded-[3px] cursor-pointer text-left light-hover'>
                                 <div className='text-[14px] font-[600]'>
-                                    Рік релізу
+                                    Рік релізу:
                                 </div>
                                 <div className='overflow-hidden text-[14px]'>
                                     {aboutRanobe?.aired_on.slice(0, 4)}
@@ -103,7 +101,7 @@ const MobileTippy:FC<props> = ({isVisible, item, setIsVisible}) => {
                             </div>
                             <div className='flex gap-[24px] rounded-[3px] cursor-pointer text-left light-hover'>
                                 <div className='text-[14px] font-[600]'>
-                                    Статус ранобе
+                                    Статус ранобе:
                                 </div>
                                 <div className='overflow-hidden text-[14px]'>
                                     {
@@ -117,7 +115,7 @@ const MobileTippy:FC<props> = ({isVisible, item, setIsVisible}) => {
                             </div>
                             <div className='flex gap-[24px] rounded-[3px] cursor-pointer text-left light-hover'>
                                 <div className='text-[14px] font-[600]'>
-                                    Всього глав
+                                    Всього глав:
                                 </div>
                                 <div className='overflow-hidden text-[14px]'>
                                     {aboutRanobe?.chapters}
@@ -126,11 +124,11 @@ const MobileTippy:FC<props> = ({isVisible, item, setIsVisible}) => {
                         </div>
                         <p className='text-[14px] text-left leading-[1.6] mt-[10px]'>
                             <div className='text-[14px] font-[600]'>
-                                Опис
+                                Опис:
                             </div>
                             {aboutRanobe?.description ? aboutRanobe.description.replace(/[^А-яЁё ]/g,"") : 'Немає опису'}
                         </p>
-                        <div className='background-elevated-2 w-full flex justify-around py-[6px] '>
+                        <div className='background-elevated-2 w-full flex justify-around py-[6px] pb-[10px] rounded-[6px]'>
                             <Link onClick={() => setIsVisible(false)} to={`/${item.id}`} className='min-h-[16px] h-[32px] m-0 px-[16px] leading-[32px] text-[14px] text-link hover:underline font-[500] outline-0 cursor-pointer'>
                                 Детальніше
                             </Link>
@@ -138,7 +136,7 @@ const MobileTippy:FC<props> = ({isVisible, item, setIsVisible}) => {
                                 <IoMdClose/>
                             </button>
                             <p className='min-h-[16px] h-[32px] m-0 px-[16px] leading-[32px] text-[14px] text-link font-[500] outline-0 cursor-pointer'>
-                                Фільтрувати
+                                Почати читати
                             </p>
                         </div>
                     </div>

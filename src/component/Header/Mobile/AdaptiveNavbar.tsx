@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BsBellSlash, BsBookmark, BsChevronLeft } from 'react-icons/bs';
 import {CgMenu, CgProfile} from 'react-icons/cg'
-import { FaHome, FaQuestionCircle } from 'react-icons/fa';
+import { FaHome, FaQuestionCircle, FaUserAlt } from 'react-icons/fa';
 import {MdOutlineMailOutline} from 'react-icons/md'
 import {TfiClose} from 'react-icons/tfi'
 import {TiNews} from 'react-icons/ti'
@@ -10,6 +10,7 @@ import AccountItems from '../AccountItems';
 import AdaptiveNavbarItem from './AdaptiveNavbarItem';
 import { AiFillSetting, AiFillWechat } from 'react-icons/ai';
 import DropRightList from '../DropRightList';
+import { BiUser } from 'react-icons/bi';
 
 const AdaptiveNavbar = () => {
     const [open, setOpen] = useState(false)
@@ -47,7 +48,7 @@ const AdaptiveNavbar = () => {
                 <div className='flex justify-around border-b-[#38383a] px-[15px] py-[24px] border-b-[1px]'>
                     <AccountItems icon={<BsBellSlash className='menu-icon'/>}/>
                     <div className='cursor-pointer ml-[3px]'>
-                        <img className='w-[70px] rounded-[4px]' src="https://ranobelib.me/uploads/users/3899409/cH6MOt7Uqy0e.jpg" alt="" />
+                        <FaUserAlt className='text-[26px]'/>
                     </div>
                     <AccountItems icon={<BsBookmark className='menu-icon'/>}/>
                 </div>
